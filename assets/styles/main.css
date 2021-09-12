@@ -1,0 +1,49 @@
+html {
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background-color: #EEE;
+}
+
+input {
+  display: block;
+  width: 100%;
+}
+
+fieldset {
+  width: 50%;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+
+input[type="submit"] {
+  margin-top: 1rem;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+th {
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+thead {
+  background-color: #c0c0c0
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+
+}
+
+td, th {
+  padding: 0.5rem;
+}
