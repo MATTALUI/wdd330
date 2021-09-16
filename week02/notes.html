@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>WDD 330 | Week 2 Notes</title>
+  <link rel="stylesheet" href="../assets/styles/main.css">
+</head>
+
+<body>
+  <h1>Week 02 Notes</h1>
+  <h2>Programming Basics</h2>
+  <p>Comments</p>
+  <pre>
+    // single-line
+    /*
+      multi
+      line
+    */</pre>
+  <p>Primitives:</p>
+  <ul>
+    <li>String</li>
+    <li>Symbol (What?)</li>
+    <li>Number</li>
+    <li>Boolean</li>
+    <li>Undefined</li>
+    <li>Null</li>
+  </ul>
+  <p><code>const</code> and <code>let</code> are better to use because their scoping is better.</p>
+  <p>Non-primitive values are by reference, so assignment can mutate the original data</p>
+  <pre>
+    const c = { value: 1 };
+    let d = c; // c.value = 1, d.value = 1
+    d.value = 2; // c.value = 2, d.value = 2</pre>
+  <p>"Symbols are the only primitives that don’t have a literal form. The only way to create them is to use the Symbol() function:"</p>
+  <pre>
+    const uniqueID = Symbol('this is a unique ID');</pre>
+  <p>Javascript will attempt to coerce types when doing comparisons. Keep this in mind when determining whether to use <code>==</code> vs <code>===</code>. JS is weakly-typed</p>
+  <p>"lazy evaluation" will prevent JS from checking all conditions if it's already determined to be a failure.</p>
+
+
+
+  <h2>Arrays, Logic, and Loops</h2>
+  <img src="https://lh5.googleusercontent.com/UmnRNYB40ak9qzYWnkNxD1HpROyStDIQl7ICHi5tmuNgZIxlUuwJ5cTSrPw0w3vweymiKFmHgHU9ahQW8N_oTjQgpym4JWI6pGlGqX5Xgo5rilYzfWfiF_MchZzjYu3J-FSRW6Pc" alt="">
+  <p>Linear, ordered, RA</p>
+  <p><code>delete</code> keyword gets rid of item at index, but does not minimize the array</p>
+  <pre>
+    const arr = [1,2,3,4,5,6,7,8,9];
+    delete arr[4]
+    >> [ 1, 2, 3, 4, undefined, 6, 7, 8, 9 ]</pre>
+  <p>Can destructure using the order and arrays</p>
+  <pre>
+    const [x,y] = [1,2];
+    >> x === 1
+    >> y === 2</pre>
+  <p>When using <code>.sort</code>, remember that numbers are sorted alphabetically</p>
+  <p>Basic <code>if</code> statement:</p>
+  <pre>
+    if (condition) {
+      // code to run if condition is true
+    }</pre>
+  <h2>Functions</h2>
+  <p>Function declaration:</p>
+  <pre>
+    function hello(){
+      console.log('Hello World!');
+    }</pre>
+  <p>Function expression:</p>
+  <pre>
+    const goodbye = function(){
+      console.log('Goodbye World!');
+    };</pre>
+  <p>Functions with default parameters:</p>
+  <pre>
+    function hello(name='World') {
+      console.log(`Hello ${name}!);
+    }</pre>
+  <p>Variables that are declared using the <code>var</code> keyword are hoisted in addition to functions! They will be <code>undefined</code> until given a value.</p>
+</body>
+
+</html>
