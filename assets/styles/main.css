@@ -5,7 +5,7 @@ html {
   background-color: #EEE;
 }
 
-input {
+form input {
   display: block;
   width: 100%;
 }
