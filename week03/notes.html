@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Week 3 Notes</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+  </head>
+
+  <body>
+    <h1>Week 03 Notes</h1>
+    <a href="..">Back to Table of Contents</a>
+    <hr/>
+    <h2>Objects</h2>
+    <p>Creating objects</p>
+    <pre>
+      const spiderman = {};
+      const spiderman = new Object();</pre>
+    <p>properties that are attributes of an object is a method. Methods can be called using the dot notaion of accessing properties.</p>
+    <pre>
+      superman.fly()</pre>
+    <p>You can use a <code>for...in</code> loop to iterate over all the properties of an object</p>
+    <pre>
+      for(const key in superman) {
+        console.log(key + ": " + superman[key]);
+      }
+      for(const key of Object.keys(superman)) {
+        console.log(key);
+      }</pre>
+    <p>You can use the <code>delete</code> keyword in order to remove properties from an onject</p>
+    <pre>
+      delete obj.property;</pre>
+    <p><strong>=============OBJECTS ARE COPIED BY REFERENCE!=============</strong></p>
+    <p>When passing an object as a param to a function, you can destructure that bad boy!</p>
+    <pre>
+      function greet({greeting,name,age}) {
+        return `${greeting}! My name is ${name} and I am ${age} years old.`;
+      }</pre>
+    <p>You can use the <code>this</code> keyword in order to access properties of an object from within a method.</p>
+    <p>Objects can be used to namespace functions and variables.</p>
+    <p><code>JSON</code> object can be used to marshal and parse other objects to and from strings</p>
+    <p>Regex objects can be created using a literal or the constructor</p>
+    <pre>
+      const pattern = /[a-zA-Z]+ing$/;
+      const pattern = new RegExp('[a-zA-Z]+ing');</pre>
+      <p>regex? Now you have two problems!</p>
+
+
+    <h2>Document Object Model</h2>
+    <p>"The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure."</p>
+    <p>You can get an element by its ID</p>
+    <pre>
+      const h1 = document.getElementById('title');</pre>
+    <p>Using <code>document.querySelector</code> will find the first element based off of the css selectors.</p>
+    <p>You can programmatically get and set the attributes of an element:</p>
+    <pre>
+      wonderWoman.setAttribute('class', 'villain');
+      wonderWoman.getAttribute('class');</pre>
+    <p><strong>=============using <code>className</code> can overwrite all other class names!=============</strong></p>
+    <p>using the <code>classList</code> API is much better for updating classes</p>
+    <pre>
+      wonderWoman.classList.add('warrior');
+      wonderWoman.classList.remove('warrior');
+      wonderWoman.classList.toggle('hero');
+      wonderWoman.classList.contains('hero');</pre>
+      <p>Vanilla uses <code>removeChild</code> to remove a node from the document and <code>replaceChild</code> in order to replace one</p>
+      <p><code>innerHTML</code> is how you can set the children and values directly for a node</p>
+      <p>When a <code>script</code> tag is added to a node using <code>innerHTML</code> will not run so that anything malicious will not get executed.</p>
+
+
+    <h2>Events</h2>
+    <p>Event handlers are functions that get called when the user performs a certain action</p>
+    <pre>
+      document.body.addEventListener("click", doSomething);</pre>
+    <p>Listeners can be added a couple of ways</p>
+    <ul>
+      <li>inline on the element</li>
+      <li>using dot notation of a node</li>
+      <li>using <code>addEventListener</code></li>
+    </ul>
+    <p><code>event.target</code> can help determine which element an event is coming from. You can also use the coordinates using <code>screenX</code> and <code>screenY</code></p>
+    <p>event types:</p>
+    <ul>
+      <li>mouse events</li>
+      <li>keyboard events</li>
+      <li>touch events</li>
+    </ul>
+    <p>You need to consider event propogation when handling events. They can either be captured or allowed to bubble. Using <code>stopPropogation</code> can prevent other handlers from firing correctly.</p>
+    <p>event delegation is attaching a listener to a parent in order to capture events from the children. Useful for attaching listeners to the document for dynamic content so only have to add the listener once.</p>
+  </body>
+</html>
