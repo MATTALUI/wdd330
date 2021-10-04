@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Week 4 Notes</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+  </head>
+
+  <body>
+    <h1>Week 04 Notes</h1>
+    <a href="..">Back to Table of Contents</a>
+    <hr/>
+    <h2>Forms</h2>
+    <p>We can use Javascript in order to preprocess some form information before it is sent to the server.</p>
+    <p>Important attributes:</p>
+    <ul>
+      <li><code>name</code> the key used for the data</li>
+      <li><code>action</code> the endpoint the form will send the data to</li>
+      <li><code>type</code> the kind of input control on the form is</li>
+    </ul>
+    <p>dot notation can be used in order to access the <code>document.forms</code> data based on the name of th input</p>
+    <p>Make sure to do some confirmation before including <code>reset</code> type inputs on the form since they'll wipe eveything out.</p>
+    <p>Form events:</p>
+    <ul>
+      <li>submit</li>
+      <li>change</li>
+      <li>focus</li>
+      <li>blur</li>
+    </ul>
+    <p>Common form controls:</p>
+    <ul>
+      <li>input</li>
+      <li>select</li>
+      <li>textarea</li>
+      <li>button</li>
+    </ul>
+    <p><code>password</code> type inputs will obscure the value for privacy</p>
+    <p><code>hidden</code> type inputs are not rendered.IT IS STILL VISIBLE IN TH HTML THOUGH.</p>
+    <p>You can't access the value of options using dot notation.</p>
+    <p>Initial values for the <code>textarea</code> can be set by adding a text child node to the element</p>
+    <p>When doing form validations, it's a good idea to use the <code>disabled</code> attribute on the button in order to prevent users from trying to submit a bad form.</p>
+    <h2>Object Oriented Programming</h2>
+    <p>Constructor function make it easy to create complex objects using  the <code>new</code> key word. It can be a lot easier than creating the literal.</p>
+    <p>Calling the constructor function is not required when creating an object that doesn't need any arguments. The following can be the same.</p>
+    <pre>
+    new Dice;
+    new Dice();</pre>
+    <p>You can use <code>instanceof</code> in order to help check the type of the object and whether or not it's an intance of something.</p>
+    <p>ES6 allows for classes to be created using the classic syntax. Note that the <code>static</code> keyword can be used in order to add static methods to the class.</p>
+    <pre>
+      class Dice {
+        constructor(sides=6) {
+          this.sides = sides;
+        }
+        roll() {
+          return Math.floor(this.sides * Math.random() + 1)
+        }
+        static description() {
+          return 'A way of choosing random numbers'
+        }
+      }</pre>
+    <p>JS actually uses prototypical inheritance instead of the ususal classical inheritance.</p>
+    <p>The prototype is live, so if you add something to the prototype for one object it will bea added to the prototype for all objects that share the prototype.</p>
+    <p>You can not overwrite the prototype even though it might look like you can.</p>
+    <p>Since JS doesn't really have private methods, we can use variable scope in order to emulate the same effect.</p>
+    <pre>
+    class Turtle {
+      constructor(name,color) {
+        this.name = name;
+        let _color = color;
+        this.setColor = color => { return _color = color; }
+        this.getColor = () => _color;
+      }
+    }</pre>
+    <p>You can use the <code>extends</code> keyword in order to have classes inherit from other classes.</p>
+    <p>You can use the prototype as a way to add extra methods to builtin objects.</p>
+    <p>The <code>enumerable</code>  property on an object helps to determine how an object works in a <code>for..in</code> loop.</p>
+    <p><code>Object.getOwnPropertyDescriptor()</code> can be used to check the descriptive infor for a particular property.</p>
+    <p><code>defineProperty</code> can be used to define getters and setters for a property.</p>
+    <pre>
+    Object.defineProperty(me, 'age', {
+      get() {
+        return 21;
+      },
+      set(value) {
+        return value;
+      }
+    });</pre>
+    <p>A chain of prototypes is created when crwating objects.</p>
+    <p><code>Object.assign</code> can be used in order to provide the same functionality that <code>mixins</code> fill in other languages. There is also a  <code>mixin</code> function that can be used in the same way.</p>
+    <pre>
+    mixin(wonderWoman,{ name: 'Wonder Woman', realName: 'Diana Prince' });</pre>
+    <p>Factory function are functions that can be sued in order to create an object. Like a little facotry!</p>
+    <p>If a method returns <code>this</code> then it can be chained together with other methods.</p>
+    <h2>Modern Javascript</h2>
+    <p>Libraries are other, third-party javascript codes that can be used in your project. A couple are:</p>
+    <ul>
+      <li>Jquery</li>
+      <li>underscore</li>
+      <li>lodash</li>
+    </ul>
+    <p>WHen creating modules, each file can export. These files that export can also have <code>default</code> exports. But you shouldn't use more than one default export in a single module. </p>
+    <p>Many frameworks use MVC patterns (Model-View-Controller)</p>
+    <p>Many frameworks use various ways to template HTML elements.</p>
+    <p> We can use <code>npm</code> in oredr to manage third party packages, libraries, and packaging of our own applications. </p>
+    <p><code>npm init</code> will generate a package file for you.</p>
+    <p><code>npm install</code> will install the dependencies you need as defined in your package.</p>
+    <p><code>npm list</code> will list all of the packages in your projects.</p>
+    <p><code>npm update</code> will update a package.</p>
+    <p>Transpilers can be used in order to convert code into something else. Like Typescript or just minification.</p>
+    <p>Modular organization structures your code by function instead of by type.</p>
+  </body>
+</html>
