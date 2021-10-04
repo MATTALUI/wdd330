@@ -1,0 +1,32 @@
+button {
+  cursor: pointer;
+}
+
+#container{
+  display: inline-block;
+  background-color: black;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 7rem);
+  grid-template-rows: repeat(3, 7rem);
+  grid-gap: .25rem;
+  width: content;
+}
+
+#board > div {
+  background-color: #eee;
+  color: red;
+  font-weight: bold;
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#winnersCircle {
+  font-size: 7rem;
+  color: blue;
+}
