@@ -36,11 +36,16 @@
       event.preventDefault();
       this.toggleTodo(+event.target.closest('.todo').getAttribute('data-todo'));
     };
+    const handleDeleteClick = event => {
+      event.preventDefault();
+      this.removeTodo(+event.target.closest('.todo').getAttribute('data-todo'));
+    };
     const _buildTodoEle = todo => {
       const ele = document.querySelector('#todo-template').content.cloneNode(true);
       ele.querySelector('.todo').setAttribute('data-todo', todo.id);
       ele.querySelector('.todo__content').innerHTML = todo.contend;
       ele.querySelector('.todo__check').addEventListener('click', handleCheckboxClick);
+      ele.querySelector('.todo__close').addEventListener('click', handleDeleteClick);
 
       if (todo.completed) {
         ele.querySelector('.todo').classList.add('complete');
@@ -124,6 +129,13 @@
     this.toggleTodo = todoId => {
       const todo = this.todos.find(todo => todo.id === todoId);
       todo.completed = !todo.completed;
+      this.saveToStorage().paint();
+
+      return this;
+    };
+
+    this.removeTodo = todoId => {
+      this.todos = this.todos.filter(todo => todo.id !== todoId);
       this.saveToStorage().paint();
 
       return this;
