@@ -20,7 +20,8 @@
   }
 
   function Todo({ id, content, completed, }={}) {
-    this.id = id || new Date().getTime();
+    // TODO: we're generating a random number ID here since we can't have ids that match
+    this.id = id || Math.floor(Math.random() * 1000000) || new Date().getTime();
     this.contend = content;
     this.completed = completed || false;
   }
@@ -31,9 +32,15 @@
     this.todos = [];
 
     // Private Methods
+    const handleCheckboxClick = event => {
+      event.preventDefault();
+      this.toggleTodo(+event.target.closest('.todo').getAttribute('data-todo'));
+    };
     const _buildTodoEle = todo => {
       const ele = document.querySelector('#todo-template').content.cloneNode(true);
+      ele.querySelector('.todo').setAttribute('data-todo', todo.id);
       ele.querySelector('.todo__content').innerHTML = todo.contend;
+      ele.querySelector('.todo__check').addEventListener('click', handleCheckboxClick);
 
       if (todo.completed) {
         ele.querySelector('.todo').classList.add('complete');
@@ -109,6 +116,14 @@
 
     this.changeFilter = filterMode => {
       this.config.mode = filterMode;
+      this.saveToStorage().paint();
+
+      return this;
+    };
+
+    this.toggleTodo = todoId => {
+      const todo = this.todos.find(todo => todo.id === todoId);
+      todo.completed = !todo.completed;
       this.saveToStorage().paint();
 
       return this;
