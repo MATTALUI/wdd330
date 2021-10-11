@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Todos</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="./todo.css">
+    <script src="./todo.js" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>Todos</h1>
+      <a href="..">Back to Table of Contents</a>
+      <hr/>
+      <div id="todos">
+      </div>
+    </div>
+    <div id="command">
+      <div>
+        <span id="todo-count">0 Tasks Left</span>
+        <span>
+          <span class="mode-switch active">All</span>
+          <span class="mode-switch">Active</span>
+          <span class="mode-switch">Completed</span>
+        </span>
+      </div>
+      <div id="command-form">
+        <input id="todo-input" type="text"/>
+        <button>+</button>
+      </div>
+    </div>
+    <template id="todo-template">
+      <div class="todo">
+        <input type="checkbox" class="todo__check"/>
+        <span class="todo__content"></span>
+        <button class="todo__close">X</button>
+      </div>
+    </template>
+  </body>
+</html>

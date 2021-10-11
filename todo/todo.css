@@ -1,0 +1,72 @@
+html {
+  height: 100vh;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+}
+
+.todo {
+  display: flex;
+  padding: 0.5rem;
+  background-color: tan;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.todo.complete > .todo__content {
+  text-decoration: line-through;
+}
+
+.mode-switch {
+  padding: .25rem;
+  cursor: pointer;
+}
+
+.mode-switch.active {
+  color: white;
+  background-color: blue;
+  border-radius: .25rem;
+}
+
+.todo > span {
+  flex: 1;
+}
+
+#content {
+  overflow: scroll;
+  flex: 1;
+  padding: 1rem;
+}
+
+#command {
+  background-color: lightgray;
+  padding: 0.25rem;
+}
+
+#command > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  margin-bottom: 0.25rem;
+}
+
+#command-form {
+  display: flex;
+}
+
+#command-form > input {
+  flex: 1;
+}
+
+#command-form > button {
+  margin-left: 0.5rem;
+}
