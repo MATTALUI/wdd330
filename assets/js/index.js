@@ -8,6 +8,7 @@
     { url: './week04/notes.html', label: 'Week 4 Notes' },
     { url: './week04/team.html', label: 'Week 4 Team Assignment' },
     { url: './week05/notes.html', label: 'Week 5 Notes' },
+    { url: './week05/team.html', label: 'Week 5 Team Assignment' },
   ];
   const contentLinks = linkRegistry.map(link => `<li><a href="${link.url}">${link.label}</a></li>`).join('');
 
