@@ -2,7 +2,9 @@
 
   function Config() {
     const MODES = {
-      ALL: 'all',
+      ALL: 'All',
+      ACTIVE: 'Active',
+      COMPLETE: 'Completed',
     };
 
     this.init = function(options={}) {
@@ -54,26 +56,72 @@
       return this;
     };
 
+    this.saveToStorage = function() {
+      // TODO: actually write this to storage;
+
+      return this;
+    };
+
+    this.activeTodoSet = () => this.todos.filter(todo => !todo.completed);
+    this.completedTodoSet = () => this.todos.filter(todo => todo.completed);
+
     this.currentTodoSet = function() {
+      const modes = this.config.modes();
       switch(this.config.mode) {
-        case this.config.modes().ALL:
+        case modes.ACTIVE:
+          return this.activeTodoSet();
+        case modes.COMPLETE:
+          return this.completedTodoSet();
+        case modes.ALL:
         default:
           return this.todos;
       }
     };
 
     this.paint = function() {
+      // Paint Todo List
       document.querySelector('#todos').innerHTML = '';
       this.currentTodoSet().forEach(todo => {
         document.querySelector('#todos').appendChild(_buildTodoEle(todo));
       });
-      document.querySelector('#todo-count').innerHTML = `${this.todos.length} Tasks Left`;
+      // Paint Todos left uncompleted
+      document.querySelector('#todo-count').innerHTML = `${this.activeTodoSet().length} Tasks Left`;
+      // Paint config filter tab
+      document.querySelectorAll('.mode-switch').forEach(switchEle => {
+        if (switchEle.innerHTML === this.config.mode) {
+          switchEle.classList.add('active');
+        } else {
+          switchEle.classList.remove('active');
+        }
+      });
+
+      return this;
+    };
+
+    this.addTodo = function(content) {
+      if (!content) { return; }
+      const todo = new Todo({ content });
+      this.todos.push(todo);
+      this.saveToStorage().paint();
+
+      return this;
+    };
+
+    this.changeFilter = filterMode => {
+      this.config.mode = filterMode;
+      this.saveToStorage().paint();
 
       return this;
     };
   }
 
-  new TodoList()
-    .loadFromStorage()
-    .paint();
+  const todoList = new TodoList().loadFromStorage().paint();
+
+  document.querySelector('#add-todo').addEventListener('click', () => {
+    todoList.addTodo(document.querySelector('#todo-input').value);
+    document.querySelector('#todo-input').value = '';
+  });
+  document.querySelectorAll('.mode-switch').forEach(switchEle => switchEle.addEventListener('click', (event) => {
+    todoList.changeFilter(event.target.innerHTML);
+  }));
 })();
