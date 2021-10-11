@@ -28,7 +28,7 @@
 
     if (playing) {
       // Check cat's game
-      const uniq = board.filter(s => !!s);
+      const uniq = board.filter(space => !!space);
       if (uniq.length === board.length) {
         document.querySelector('#winnersCircle').innerHTML = 'Cat\'s game!';
         playing = false;
@@ -57,7 +57,6 @@
 
       document.querySelector('#board').appendChild(ele);
     });
-
   };
 
   const setupGame = event => {
