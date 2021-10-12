@@ -1,3 +1,9 @@
+:root {
+  --primary: #A33B20;
+  --accent: #FCA311;
+  --light: #EEE;
+}
+
 html {
   height: 100vh;
   padding: 0;
@@ -17,9 +23,23 @@ h1 {
 .todo {
   display: flex;
   padding: 0.5rem;
-  background-color: tan;
+  background-color: var(--primary);
+  color: var(--light);
   align-items: center;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
+  border-left: 3px solid var(--accent);
+  border-right: 3px solid var(--accent);
+  font-size: 1.2rem;
+}
+
+.todo:first-of-type{
+  border-top: 3px solid var(--accent);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.todo:last-of-type{
+  border-bottom: 3px solid var(--accent);
+  border-radius: 0 0 1rem 1rem;
 }
 
 .todo.complete > .todo__content {
@@ -33,12 +53,17 @@ h1 {
 
 .mode-switch.active {
   color: white;
-  background-color: blue;
+  background-color: var(--primary);
   border-radius: .25rem;
+  border: 1px solid var(--accent);
 }
 
 .todo > span {
   flex: 1;
+}
+
+#nonetext {
+  text-align: center;
 }
 
 #content {

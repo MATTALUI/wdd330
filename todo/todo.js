@@ -21,8 +21,8 @@
 
   function Todo({ id, content, completed, }={}) {
     // TODO: we're generating a random number ID here since we can't have ids that match
-    this.id = id || Math.floor(Math.random() * 1000000) || new Date().getTime();
-    this.contend = content;
+    this.id = id || new Date().getTime();
+    this.content = content;
     this.completed = completed || false;
   }
 
@@ -43,7 +43,7 @@
     const _buildTodoEle = todo => {
       const ele = document.querySelector('#todo-template').content.cloneNode(true);
       ele.querySelector('.todo').setAttribute('data-todo', todo.id);
-      ele.querySelector('.todo__content').innerHTML = todo.contend;
+      ele.querySelector('.todo__content').innerHTML = todo.content;
       ele.querySelector('.todo__check').addEventListener('click', handleCheckboxClick);
       ele.querySelector('.todo__close').addEventListener('click', handleDeleteClick);
 
@@ -57,20 +57,16 @@
 
     // Public Methods
     this.loadFromStorage = function() {
-      // TODO: actually load from storage
-      this.todos = [
-        new Todo({ content: 'Eat the Cat'}),
-        new Todo({ content: 'This one is complete', completed: true }),
-        new Todo({ content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}),
-        new Todo({ content: 'Win the yo-yo world championships', completed: true}),
-      ];
+      let storedState = JSON.parse(localStorage.getItem('TODOAPP::STATE')) || {};
+      this.todos = (storedState.todos || []).map(todo => new Todo(todo));
+      this.config.init(storedState.config || {});
 
       return this;
     };
 
     this.saveToStorage = function() {
       // TODO: actually write this to storage;
-
+      localStorage.setItem('TODOAPP::STATE', JSON.stringify(this));
       return this;
     };
 
@@ -91,11 +87,17 @@
     };
 
     this.paint = function() {
-      // Paint Todo List
       document.querySelector('#todos').innerHTML = '';
+      // Paint Todo List
       this.currentTodoSet().forEach(todo => {
         document.querySelector('#todos').appendChild(_buildTodoEle(todo));
       });
+      if (this.currentTodoSet().length === 0) {
+        const noText = document.createElement('p');
+        noText.innerHTML = 'No TODOs here.';
+        noText.setAttribute('id', 'nonetext');
+        document.querySelector('#todos').appendChild(noText);
+      }
       // Paint Todos left uncompleted
       document.querySelector('#todo-count').innerHTML = `${this.activeTodoSet().length} Tasks Left`;
       // Paint config filter tab
