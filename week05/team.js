@@ -24,8 +24,9 @@
   };
 
   const hikes = [
-    { name: 'Bechler Falls', distance: 3, difficulty: 'Easy', image: 'https://picsum.photos/200/300' },
+    { name: 'Bechler Falls', distance: 3, difficulty: 'Easy', image: '../assets/images/blecher.jpeg' },
     { name: 'Teton Canyon', distance: 3, difficulty: 'Easy', image: 'https://picsum.photos/200/300' },
     { name: 'Denanda Falls', distance: 7, difficulty: 'Moderate', image: 'https://picsum.photos/200/300' },
+    { name: 'Matts Hike', distance: 7, difficulty: 'Moderate', image: 'https://picsum.photos/200/300' },
   ].map(h => new Hike(h)).forEach(renderHike);
 })();

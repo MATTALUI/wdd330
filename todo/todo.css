@@ -2,6 +2,7 @@
   --primary: #A33B20;
   --accent: #FCA311;
   --light: #EEE;
+  --dark: #000;
 }
 
 html {
@@ -18,6 +19,10 @@ body {
 
 h1 {
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 .todo {
@@ -67,14 +72,16 @@ h1 {
 }
 
 #content {
-  overflow: scroll;
+  overflow: auto;
   flex: 1;
   padding: 1rem;
+  grid-area: content;
 }
 
 #command {
   background-color: lightgray;
   padding: 0.25rem;
+  grid-area: command;
 }
 
 #command > div:first-of-type {
@@ -94,4 +101,41 @@ h1 {
 
 #command-form > button {
   margin-left: 0.5rem;
+}
+
+/* MEDIUM SCREENS */
+@media only screen and (min-width: 768px) {
+  #command {
+    padding: 1rem 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  #todo-input {
+    height: 2.5rem;
+    font-size: 2.5rem;
+  }
+
+  #add-todo {
+    font-size: 2rem;
+  }
+}
+
+/* LARGE SCREENS */
+@media only screen and (min-width: 1024px) {
+  body {
+    background-color: var(--accent);
+  }
+
+  .todo {
+    border-left: 3px solid var(--dark);
+    border-right: 3px solid var(--dark);
+  }
+
+  .todo:first-of-type{
+    border-top: 3px solid var(--dark);
+  }
+
+  .todo:last-of-type{
+    border-bottom: 3px solid var(--dark);
+  }
 }
