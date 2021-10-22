@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Week 6 Notes</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+  </head>
+
+  <body>
+    <h1>Week 06 Notes</h1>
+    <a href="..">Back to Table of Contents</a>
+    <hr/>
+    <h2>Further Functions</h2>
+    <p>You can use the <code>call</code> function in order to supply an object to be used as <code>this</code>. </p>
+    <p>"There is nothing to stop you adding your own properties to functions in the same way that you can add properties to any object in JavaScript." ...wat</p>
+    <p>An <code>IIFE</code> can be used to keep variables wrapped up in the scope of a function. Really good for hiding variables from a console.</p>
+    <p>You can also use <code>IIFE</code> to declare temporary variables that get thrown away later! How nifty!</p>
+    <p>You can also use <code>IIFE</code> to initialize stuff and throw it away!</p>
+    <p>Functions can do things and then rewrite themselves with new functionality.</p>
+    <pre>
+      function party(){
+        console.log('Wow this is amazing!');
+        party = function(){
+          console.log('Been there, got the T-Shirt');
+        }
+      }</pre>
+    <p>Callbacks can quickly get you stuck in a callback hell.</p>
+    <p>It's common to have error-first callbacks, ehere the error is the first value passed into a callback function.</p>
+    <p>Promise states:</p>
+    <ul>
+      <li>Pending</li>
+      <li>Resolved</li>
+      <li>Rejected</li>
+    </ul>
+    <p>Creating a promise</p>
+    <pre>
+      const promise = new Promise( (resolve, reject) => {
+        // initialization code goes here
+        if (success) {
+          resolve(value);
+        } else {
+          reject(error);
+        }
+      });</pre>
+    <p>You can handle a promise using <code>.then</code> and <code>.catch</code>.</p>
+    <p>Nowadays JS has <code>async</code> function that return an implicit promise. They can be used with <code>await</code> </p>
+    <p>CLosures can be used to help manage context.</p>
+    <p>Generators are cool! They don't get called, they just return a generator which will create the values as you call <code>next</code> </p>
+    <pre>
+      function* fibonacci(a,b) {
+        let [ prev,current ] = [ a,b ];
+        while(true) {
+          [prev, current] = [current, prev + current];
+          yield current;
+        }
+      }
+      const sequence = fibonacci(1,1);
+      sequence.next();</pre>
+    <p>Generators can be iterated over using the <code>of</code> keyword.</p>
+    <p>HOF accept another function as an arg;</p>
+    <p>"Curryingis a process that involves the partial application of functions."</p>
+    <h2>AJAX</h2>
+    <p>Asynchronous javascript and XML.</p>
+    <pre>
+    fetch('https://example.com/data')
+    .then( // code that handles the response )
+    .catch( // code that runs if the server returns an error )</pre>
+    <p>A request has:</p>
+    <ul>
+      <li>URL</li>
+      <li>method</li>
+      <li>headers</li>
+      <li>mode</li>
+      <li>cache</li>
+      <li>credentaisl</li>
+      <li>redirect</li>
+    </ul>
+    <p>Its a good idead to use spinners when waiting for responses sos that use user isn't staring at a frozen screen.</p>
+    <p>Honestly, a lot of this chapter seems to over-complicate a lot of these things... I will likely never use <code>new Request</code>...</p>
+    <p><code>FormData</code> does actually seem helpful. It will help to serialize the form information.</p>
+  </body>
+</html>
