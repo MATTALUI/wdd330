@@ -8,10 +8,10 @@
     { url: './week04/notes.html', label: 'Week 4 Notes' },
     { url: './week04/team.html', label: 'Week 4 Team Assignment' },
     { url: './week05/notes.html', label: 'Week 5 Notes' },
-    { url: './week05/team.html', label: 'Week 5 Team Assignment' },
+    { url: './week05/team.html', label: 'Week 5 Team Assignment (Hikes)' },
     { url: './todo/index.html', label: 'Todos Project' },
-    { url: './week06/notes.html', label: 'Week 6 Notes' },
-    { url: './week06/team.html', label: 'Week 6 Team Assignment' },
+    { url: './week07/notes.html', label: 'Week 7 Notes' },
+    { url: './week07/team.html', label: 'Week 7 Team Assignment (Hike Comments)' },
   ];
   const contentLinks = linkRegistry.map(link => `<li><a href="${link.url}">${link.label}</a></li>`).join('');
 
