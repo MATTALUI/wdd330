@@ -7,15 +7,25 @@ body {
 
 img {
   width: 100%;
+  max-height: 25rem;
 }
 
-#hikes {
-  list-style-type: none;
+label {
+  display: block;
+}
+
+textarea, input {
+  width: 100%;
+}
+
+form > div {
+  margin-bottom: 1rem;
 }
 
 .hike {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  background-color: floralwhite;
+  border: 1px solid grey;
+  margin-bottom: 1rem;
 }
 
 .hike__name {
@@ -25,8 +35,47 @@ img {
   color: white;
   grid-column-start: 1;
   grid-column-end: 3;
+  cursor: pointer;
+  margin-top: 0;
 }
 
-.hike > div {
+.hike__body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hike__body > div {
   padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.comment {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+.comment__name {
+  font-size: .9rem;
+  font-weight: bold;
+}
+
+.comment__body {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.comment__date {
+  font-size: 0.75rem;
+  color: lightgrey;
+}
+
+#hikes {
+  list-style-type: none;
+  padding: 0 1rem;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
 }
