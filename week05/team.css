@@ -30,9 +30,9 @@ form > div {
 
 .hike__name {
   text-align: center;
-  background-color: gray;
+  background-color: goldenrod;
   padding: 1rem;
-  color: white;
+  color: black;
   grid-column-start: 1;
   grid-column-end: 3;
   cursor: pointer;
