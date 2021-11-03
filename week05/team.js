@@ -56,7 +56,6 @@
     { name: 'Denanda Falls', distance: 7, difficulty: 'Moderate', image: 'https://picsum.photos/300/200' },
     { name: 'Matts Hike', distance: 7, difficulty: 'Moderate', image: 'https://picsum.photos/300/200' },
   ];
-  console.log(Comment.getAllComments());
 
   const toggleHikeBody = event => {
     // document.querySelectorAll('.hike__body').forEach(ele => ele.classList.add('hidden'));
@@ -114,7 +113,6 @@
     hikeEle.querySelector('.hike__distance').innerHTML = hike.distance;
 
     // Build Comment Stuff
-    hikeEle.querySelector('.comment-form__hike').value = hike.name;
     hikeEle.querySelector('.comment-form__hike').value = hike.name;
     Comment.getCommentsForHike(hike).map(buildCommentEle).forEach(commentEle => {
       hikeEle.querySelector('.hike__comments').appendChild(commentEle);
