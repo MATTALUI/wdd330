@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Week 8 Notes</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+  </head>
+
+  <body>
+    <h1>Week 08 Notes</h1>
+    <a href="..">Back to Table of Contents</a>
+    <hr/>
+    <h2>Transforms and Transitions</h2>
+    <p>Tnasform CSS allows you to mess with any of the elements on the page</p>
+    <ul>
+      <li>tansform(x, y)</li>
+      <li>transformX(x)</li>
+      <li>transformY(y)</li>
+    </ul>
+    <p>Transforms do not work on inline elements. WoW!</p>
+    <p>Scaling changes the size</p>
+    <p>You can combine transformations into the <code>transform</code> property</p>
+    <pre>
+    .ad-ad2 h1:hover span {
+      color: #484848;
+      transform: rotate(10deg) translateX(40px) scale(1.5);
+    }</pre>
+    <p>Skew can change how the element lookw with perspective.</p>
+    <p>The origin can be changed.</p>
+    <pre>
+    transform-origin: 0 0;</pre>
+    <p>Transformations are applied in the order they are listed in.</p>
+    <p>There are issues with IE. Who cares.</p>
+    <p>Animations are done with keyframes</p>
+    <pre>
+    @keyframes myAnimation {
+      /* put animation keyframes here */
+    }
+    .verbose {
+      animation-name: myAnimation;
+      animation-duration: 300ms;
+      animation-timing-function: ease-in;
+      animation-iteration-count: 1;
+      animation-direction: alternate;
+      animation-delay: 5s;
+      animation-fill-mode: backwards;
+      animation-play-state: running;
+    }
+    /* shorthand */
+    .concise {
+      animation: 300ms ease-in alternate 5s backwards myAnimation;
+    }</pre>
+    <h2>Canvas, SVG, Drag and Drop</h2>
+    <p>Start by adding a canvas</p>
+    <pre>
+    &lt;canvas id="myCanvas" class="myCanvas"  width="200" height="200">
+      Sorry! Your browser doesn’t support Canvas.
+    &lt;/canvas></pre>
+    <p>We don't set size with CSS because it determines the coordinate system.</p>
+    <p>Canvas elements can be converted to data urls.</p>
+    <pre>
+    const canvas5 = document.getElementById("demo5");
+    window.open(canvas5.toDataURL("image/png"));</pre>
+    <p>Using canvas has some accessability errors because it's invisible to screen readers!</p>
+    <p>We can use <a href="http://raphaeljs.com/">Raphael</a> to draw SVGs easier.</p>
+    <p>You can add the <code>draggable</code> attribute to an element to make it draggable.</p>
+  </body>
+</html>

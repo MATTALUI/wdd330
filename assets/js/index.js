@@ -12,6 +12,8 @@
     { url: './todo/index.html', label: 'Todos Project' },
     { url: './week07/notes.html', label: 'Week 7 Notes' },
     { url: './week05/team.html', label: 'Week 7 Team Assignment (Hike Comments)' },
+    { url: './week08/notes.html', label: 'Week 8 Notes' },
+    { url: './week08/team.html', label: 'Week 8 Team Assignment' },
   ];
   const contentLinks = linkRegistry.map(link => `<li><a href="${link.url}">${link.label}</a></li>`).join('');
 
