@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="pseudonav">
+    <h1>Week 09 Notes</h1>
+    <a href="../..">Back to Table of Contents</a>
+  </div>
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="./sounds/clap.wav"></audio>
+  <audio data-key="83" src="./sounds/hihat.wav"></audio>
+  <audio data-key="68" src="./sounds/kick.wav"></audio>
+  <audio data-key="70" src="./sounds/openhat.wav"></audio>
+  <audio data-key="71" src="./sounds/boom.wav"></audio>
+  <audio data-key="72" src="./sounds/ride.wav"></audio>
+  <audio data-key="74" src="./sounds/snare.wav"></audio>
+  <audio data-key="75" src="./sounds/tom.wav"></audio>
+  <audio data-key="76" src="./sounds/tink.wav"></audio>
+
+<script>
+  document.addEventListener('keydown', event => {
+    // This is all we need for MVP
+    console.log(event);
+    const { keyCode } = event;
+    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+    if (!audio){ return; }
+    audio.pause();
+    audio.currentTime = 0;
+    audio.play();
+
+    // Stretch goal to make styles
+    const key = document.querySelector(`.key[data-key="${keyCode}"]`);
+    // NOTE: I don't know why this works. I stole it.
+    // https://stackoverflow.com/questions/6268508/restart-animation-in-css3-any-better-way-than-removing-the-element
+    key.style.animation = 'none';
+    key.offsetHeight; /* trigger reflow */
+    key.style.animation = null;
+
+    key.classList.add('pressed');
+    key.classList.add('down');
+    setTimeout(() => key.classList.remove('pressed'), 400);
+  });
+
+  document.addEventListener('keyup', event => {
+    const { keyCode } = event;
+    const key = document.querySelector(`.key[data-key="${keyCode}"]`);
+    if (!key){ return; }
+    key.classList.remove('down');
+  });
+</script>
+
+
+</body>
+</html>
