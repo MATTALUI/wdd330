@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Week 9 Notes</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+  </head>
+
+  <body>
+    <h1>Week 09 Notes</h1>
+    <a href="..">Back to Table of Contents</a>
+    <hr/>
+    <h2>The Window Object</h2>
+    <p>The BOM makes sense when your javascript is running in the context of a browser.</p>
+    <p>Nondeclared variables automatically egt added to the high level global context, the window. The same is true of JS functions.</p>
+    <p>The window has access to some dialog functions. (Note: They are very annoying.)</p>
+    <ul>
+      <li>alert</li>
+      <li>confirm</li>
+      <li>prompt</li>
+    </ul>
+    <p><code>window.location</code> can be used to update pieces of navigation</p>
+    <p>You can use <code>window.open</code> to open a new browser window. This will be useful for popping up the websites of our sponsors!</p>
+    <p>You can create custom cookies.</p>
+    <pre>
+    const cookies = document.cookie.split("; ");
+    for (crumb of cookies){
+      const [key,value] = crumb.split("=");
+      console.log(`The value of ${key} is ${value}`);
+    }</pre>
+    <p>We can use the <code>window.requestAnimationFrame</code> recursively in order to do some animation programatically. Its FPS is usually about 60, but it's optimized depending on the browser/device. Although it's followed up by suggeting that we just use CSS instead.</p>
+    <p>I'm a little peeved by the fact that all of these teaching are immediately followed by reason we shouldn't really be suing them, or that we should be cautious of them... :/</p>
+    <h2>HTML5 APIs</h2>
+    <p>The <code>data-</code> attribue can be used to add whatever data we want to HTML elements.</p>
+    <p>Use <code>localstorage</code> to store key-value pairs in the browser.</p>
+    <p>You can add an event listener to the local storage! How nifty.</p>
+    <p>Javascript can access the user's geolocation.</p>
+    <p>Web workers can be used in ordre to run a very intensive process without fear of causing the browser to think that a script has become unresponsive. You can also communicate with them via messages.</p>
+    <pre>
+    const worker = new Worker('task.js');
+    worker.postMessage('Hello');
+    worker.addEventListener('message', (event) => {
+      console.log(event.data);
+    }, false);</pre>
+    <p>Websockets can be made using a URL</p>
+    <pre>
+    const URL = 'wss://echo.websocket.org/';
+    const connection = new WebSocket(URL);
+    connection.addEventListener('open', () => {
+      output('CONNECTED');
+    }, false);</pre>
+    <p>Youre scripts can use the Notification API in order to notify users.</p>
+    <p>Some APIs on the bleeding edge can be dangerous. We've even gotten rid of some that caused battery snitching.  </p>
+    <p>More canvas stuff...</p>
+  </body>
+</html>
