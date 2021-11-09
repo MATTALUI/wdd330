@@ -1,8 +1,8 @@
 [
   {
-    "name": "Wigglytuff",
-    "num": 40,
-    "mr_id": 10697,
-    "path": "./mons/40/Wigglytuff.DAE"
+    "name": "Diglett",
+    "num": 50,
+    "mr_id": 10758,
+    "path": "./mons/50/Diglett.DAE"
   }
 ]

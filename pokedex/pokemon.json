@@ -243,61 +243,61 @@
     "name": "Zubat",
     "num": 41,
     "mr_id": 8668,
-    "path": "mons/41/041. Zubat/zubat_m.dae"
+    "path": "./mons/41/zubat_m.dae"
   },
   {
     "name": "Golbat",
     "num": 42,
     "mr_id": 8671,
-    "path": "mons/42/042. Golbat/golbat_m.dae"
+    "path": "./mons/42/golbat_m.dae"
   },
   {
     "name": "Oddish",
     "num": 43,
     "mr_id": 10751,
-    "path": "mons/43/Pokemon XY/Oddish/Oddish.DAE"
+    "path": "./mons/43/Oddish.DAE"
   },
   {
     "name": "Gloom",
     "num": 44,
     "mr_id": 10752,
-    "path": "mons/44/Pokemon XY/Gloom/Gloom_M.DAE"
+    "path": "./mons/44/Gloom_M.DAE"
   },
   {
     "name": "Vileplume",
     "num": 45,
     "mr_id": 10753,
-    "path": "mons/45/Pokemon XY/Vileplume/Vileplume_M.DAE"
+    "path": "./mons/45/Vileplume_M.DAE"
   },
   {
     "name": "Paras",
     "num": 46,
     "mr_id": 10754,
-    "path": "mons/46/Pokemon XY/Paras/Paras.DAE"
+    "path": "./mons/46/Paras.DAE"
   },
   {
     "name": "Parasect",
     "num": 47,
     "mr_id": 10755,
-    "path": "mons/47/Pokemon XY/Parasect/Parasect.DAE"
+    "path": "./mons/47/Parasect.DAE"
   },
   {
     "name": "Venonat",
     "num": 48,
     "mr_id": 10756,
-    "path": "mons/48/Pokemon XY/Venonat/Venonat.DAE"
+    "path": "./mons/48/Venonat.DAE"
   },
   {
     "name": "Venomoth",
     "num": 49,
     "mr_id": 10757,
-    "path": "mons/49/Pokemon XY/Venomoth/Venomoth.DAE"
+    "path": "./mons/49/Venomoth.DAE"
   },
   {
     "name": "Diglett",
     "num": 50,
     "mr_id": 10758,
-    "path": "mons/50/Pokemon XY/Diglett/Diglett.DAE"
+    "path": "./mons/50/Diglett.DAE"
   },
   {
     "name": "Dugtrio",
