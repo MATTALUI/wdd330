@@ -1,6 +1,6 @@
 (async () => {
 	const scene = new THREE.Scene();
-	const container = document.querySelector('#dex-comtainer');
+	const container = document.querySelector('#dex-container');
 	const canvas = document.querySelector('#dex-screen');
 	const camera = new THREE.PerspectiveCamera( 400, window.innerWidth / window.innerHeight, 0.1, 1000 );
 	const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
@@ -19,7 +19,15 @@
 	scene.add(dLight);
 
 	const toggleSceneSpinner = () => {
-		// TODO: implement this later...
+		document.querySelector('#loader-container').classList.toggle('hidden');
+	}
+
+	const wait = (ms=500) => {
+		return new Promise((res, rej) => {
+			setTimeout(() => { // Simulate slow for the spinner
+				res();
+			}, ms);
+		});
 	}
 
 	const swapPokemon = async event => {
@@ -29,19 +37,20 @@
 		if (currentScenePokemon) {
 			scene.remove(currentScenePokemon);
 			currentScenePokemon = null;
-			toggleSceneSpinner();
 		}
+		toggleSceneSpinner();
+		await wait(); // I made the spinner; you'll see it, dang it!
 		if (pokemon.scene) {
+			toggleSceneSpinner();
 			scene.add(pokemon.scene);
 			currentScenePokemon = pokemon.scene;
-			toggleSceneSpinner();
 		} else {
-			loader.load(pokemon.path, function (result) {
+			loader.load(pokemon.path, async result => {
+				toggleSceneSpinner();
 				pokemon.scene = result.scene;
 				pokemon.scene.name = pokemon.name;
 				scene.add(pokemon.scene);
 				currentScenePokemon = pokemon.scene;
-				toggleSceneSpinner();
 			});
 		}
 	}
