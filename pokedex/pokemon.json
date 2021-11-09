@@ -3,25 +3,25 @@
     "name": "Bulbasaur",
     "num": 1,
     "mr_id": 9318,
-    "path": "/pokedex/mons/1/Bulbasaur_OpenCollada.DAE"
+    "path": "./mons/1/Bulbasaur_OpenCollada.DAE"
   },
   {
     "name": "Ivysaur",
     "num": 2,
     "mr_id": 9319,
-    "path": "/pokedex/mons/2/Ivysaur_OpenCollada.DAE"
+    "path": "./mons/2/Ivysaur_OpenCollada.DAE"
   },
   {
     "name": "Venusaur",
     "num": 3,
     "mr_id": 9320,
-    "path": "/pokedex/mons/3/VenusaurM_OpenCollada.DAE"
+    "path": "./mons/3/VenusaurM_OpenCollada.DAE"
   },
   {
     "name": "Charmander",
     "num": 4,
     "mr_id": 9156,
-    "path": "/pokedex/mons/4/charmander-FIX.dae"
+    "path": "./mons/4/charmander-FIX.dae"
   },
   {
     "name": "Charmeleon",
