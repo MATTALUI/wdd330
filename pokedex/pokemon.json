@@ -93,91 +93,91 @@
     "name": "Pidgey",
     "num": 16,
     "mr_id": 10684,
-    "path": "mons/16/Pokemon XY/Pidgey/Pidgey.DAE"
+    "path": "./mons/16/Pidgey.DAE"
   },
   {
     "name": "Pidgeotto",
     "num": 17,
     "mr_id": 10685,
-    "path": "mons/17/Pokemon XY/Pidgeotto/Pidgeotto.DAE"
+    "path": "./mons/17/Pidgeotto.DAE"
   },
   {
     "name": "Pidgeot",
     "num": 18,
     "mr_id": 10686,
-    "path": "mons/18/Pokemon XY/Pidgeot/Pidgeot.DAE"
+    "path": "./mons/18/Pidgeot.DAE"
   },
   {
     "name": "Rattata",
     "num": 19,
     "mr_id": 10688,
-    "path": "mons/19/Pokemon XY/Rattata/Rattata_M.DAE"
+    "path": "./mons/19/Rattata_M.DAE"
   },
   {
     "name": "Raticate",
     "num": 20,
     "mr_id": 10689,
-    "path": "mons/20/Pokemon XY/Raticate/Raticate_M.DAE"
+    "path": "./mons/20/Raticate_M.DAE"
   },
   {
     "name": "Spearow",
     "num": 21,
     "mr_id": 10690,
-    "path": "mons/21/Pokemon XY/Spearow/Spearow.DAE"
+    "path": "./mons/21/Spearow.DAE"
   },
   {
     "name": "Fearow",
     "num": 22,
     "mr_id": 10691,
-    "path": "mons/22/Pokemon XY/Fearow/Fearow.DAE"
+    "path": "./mons/22/Fearow.DAE"
   },
   {
     "name": "Ekans",
     "num": 23,
     "mr_id": 8817,
-    "path": "mons/23/Pokemon XY/Ekans/Ekans_ColladaMax.DAE"
+    "path": "./mons/23/ekans-FIX.dae"
   },
   {
     "name": "Arbok",
     "num": 24,
     "mr_id": 10692,
-    "path": "mons/24/Pokemon XY/Arbok/Arbok_OpenCollada.DAE"
+    "path": "./mons/24/Arbok_OpenCollada.DAE"
   },
   {
     "name": "Pikachu",
     "num": 25,
     "mr_id": 8612,
-    "path": "mons/25/Pokemon XY/Pikachu/PikachuM_ColladaMax.DAE"
+    "path": "./mons/25/pikachu-M-FIX.dae"
   },
   {
     "name": "Raichu",
     "num": 26,
     "mr_id": 8613,
-    "path": "mons/26/Pokemon XY/Raichu/RaichuM_ColladaMax.DAE"
+    "path": "./mons/26/raichu-M-FIX-Partial.dae"
   },
   {
     "name": "Sandshrew",
     "num": 27,
     "mr_id": 10511,
-    "path": "mons/27/Pokemon XY/Sandshrew/Sandshrew_OpenCollada.DAE"
+    "path": "./mons/27/Sandshrew_OpenCollada.DAE"
   },
   {
     "name": "Sandslash",
     "num": 28,
     "mr_id": 10512,
-    "path": "mons/28/Pokemon XY/Sandslash/Sandslash_OpenCollada.DAE"
+    "path": "./mons/28/Sandslash_OpenCollada.DAE"
   },
   {
     "name": "Nidoran♀",
     "num": 29,
     "mr_id": 7952,
-    "path": "mons/29/Pokemon XY/NidoranF/NidoranF_ColladaMax.DAE"
+    "path": "./mons/29/nidoran-F-FIX.dae"
   },
   {
     "name": "Nidorina",
     "num": 30,
     "mr_id": 7953,
-    "path": "mons/30/Pokemon XY/Nidorina/Nidorina_ColladaMax.DAE"
+    "path": "./mons/30/nidorina-FIX-partial.dae"
   },
   {
     "name": "Nidoqueen",

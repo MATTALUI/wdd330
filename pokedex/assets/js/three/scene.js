@@ -4,9 +4,7 @@ const canvas = document.querySelector('#dex-screen');
 const camera = new THREE.PerspectiveCamera( 400, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-// renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
 renderer.setSize(container.offsetWidth, window.innerHeight/2);
-// document.body.appendChild( renderer.domElement );
 
 camera.position.set( 1, 1, 20 );
 
@@ -16,7 +14,7 @@ scene.add(hlight);
 const dLight = new THREE.DirectionalLight(0x000000, 100);
 dLight.position.set(0,1,0);
 dLight.castShadow = true;
-// scene.add(dLight);
+scene.add(dLight);
 
 const controls = new THREE.OrbitControls( camera, renderer.domElement );
 

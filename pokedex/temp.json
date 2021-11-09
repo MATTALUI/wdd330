@@ -1,8 +1,8 @@
 [
   {
-    "name": "Beedrill",
-    "num": 15,
-    "mr_id": 10682,
-    "path": "./mons/15/Beedrill.DAE"
+    "name": "Nidorina",
+    "num": 30,
+    "mr_id": 7953,
+    "path": "./mons/30/nidorina-FIX-partial.dae"
   }
 ]
