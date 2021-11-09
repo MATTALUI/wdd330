@@ -63,31 +63,31 @@
     "name": "Metapod",
     "num": 11,
     "mr_id": 9322,
-    "path": "mons/11/Pokemon XY/Metapod/Metapod_OpenCollada.DAE"
+    "path": "./mons/11/Metapod_OpenCollada.DAE"
   },
   {
     "name": "Butterfree",
     "num": 12,
     "mr_id": 9323,
-    "path": "mons/12/Pokemon XY/Butterfree/ButterfreeM_OpenCollada.DAE"
+    "path": "./mons/12/ButterfreeM_OpenCollada.DAE"
   },
   {
     "name": "Weedle",
     "num": 13,
     "mr_id": 10680,
-    "path": "mons/13/Pokemon XY/Weedle/Weedle.DAE"
+    "path": "./mons/13/Weedle.DAE"
   },
   {
     "name": "Kakuna",
     "num": 14,
     "mr_id": 10681,
-    "path": "mons/14/Pokemon XY/Kakuna/Kakuna.DAE"
+    "path": "./mons/14/Kakuna.DAE"
   },
   {
     "name": "Beedrill",
     "num": 15,
     "mr_id": 10682,
-    "path": "mons/15/Pokemon XY/Beedrill/Beedrill.DAE"
+    "path": "./mons/15/Beedrill.DAE"
   },
   {
     "name": "Pidgey",

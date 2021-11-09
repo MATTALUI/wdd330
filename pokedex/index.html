@@ -3,84 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-			#c {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: url('./wtp.png') no-repeat center center;
-    background-size: cover;
-}
-		</style>
+		<link rel="stylesheet" href="./assets/styles/main.css">
+		<script src="./assets/js/three/three.js" defer></script>
+		<script src="./assets/js/three/loaders/ColladaLoader.js" defer></script>
+		<script src="./assets/js/three/OrbitControls.js" defer></script>
+		<script src="./assets/js/three/scene.js" defer></script>
 	</head>
 	<body>
 		<a href="..">Back to Table of Contents</a>
-		<canvas id="c"></canvas>
-		<script src="./three.js"></script>
-		<script src="./loaders/ColladaLoader.js"></script>
-		<script src="./OrbitControls.js"></script>
-		<script>
-			const scene = new THREE.Scene();
-			const canvas = document.querySelector('#c');
-			const camera = new THREE.PerspectiveCamera( 400, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-			const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-			renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
-			document.body.appendChild( renderer.domElement );
-
-			camera.position.set( 1, 1, 20 );
-
-			const hlight = new THREE.AmbientLight(0x020202, 100);
-			scene.add(hlight);
-
-			const dLight = new THREE.DirectionalLight(0x000000, 100);
-			dLight.position.set(0,1,0);
-			dLight.castShadow = true;
-			// scene.add(dLight);
-			
-			const controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
-			const loader = new THREE.ColladaLoader();
-
-			document.addEventListener('keypress', function(event) {
-				const { keyCode } = event;
-				if (keyCode === 32 && mons.length) {
-					console.log('Swap mons');
-					scene.remove(mons[currentIndex]);
-					currentIndex++;
-					if (currentIndex === mons.length) {
-						currentIndex = 0;
-					}
-					scene.add(mons[currentIndex]);
-				}
-			});
-
-			let currentIndex = 0;
-			let mons = [];
-				
-			async function loadMons() {
-				const data = await fetch('./temp.json');
-				const pokemon = await data.json();
-				await Promise.all(pokemon.map(pokemon => new Promise((resolve, rej) => {
-					loader.load(pokemon.path, function (result) {
-						result.scene.name = pokemon.name;
-						mons.push(result.scene);
-						resolve();
-					});
-				})));
-				scene.add(mons[currentIndex]);
-				animate();
-				
-			}
-			loadMons();
-
-			function animate() {
-				renderer.render( scene, camera );
-				requestAnimationFrame( animate );
-				controls.update();
-			}
-		</script>
+		<canvas id="dex-screen"></canvas>
 	</body>
 </html>
