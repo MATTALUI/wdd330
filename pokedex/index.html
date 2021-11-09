@@ -61,7 +61,7 @@
 			let mons = [];
 				
 			async function loadMons() {
-				const data = await fetch('./pokemon.json');
+				const data = await fetch('./temp.json');
 				const pokemon = await data.json();
 				await Promise.all(pokemon.map(pokemon => new Promise((resolve, rej) => {
 					loader.load(pokemon.path, function (result) {

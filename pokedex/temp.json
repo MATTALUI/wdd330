@@ -1,8 +1,8 @@
 [
   {
-    "name": "Charmander",
-    "num": 4,
-    "mr_id": 9156,
-    "path": "/pokedex/mons/4/charmander-FIX.dae"
+    "name": "Caterpie",
+    "num": 10,
+    "mr_id": 9321,
+    "path": "./mons/10/Caterpie_OpenCollada.DAE"
   }
 ]

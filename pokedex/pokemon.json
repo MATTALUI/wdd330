@@ -27,37 +27,37 @@
     "name": "Charmeleon",
     "num": 5,
     "mr_id": 9157,
-    "path": "mons/5/Pokemon XY/Charmeleon/Charmeleon_ColladaMax.DAE"
+    "path": "./mons/5/charmeleon-FIX.dae"
   },
   {
     "name": "Charizard",
     "num": 6,
     "mr_id": 9158,
-    "path": "mons/6/Pokemon XY/Charizard/charizard-FIX.dae"
+    "path": "./mons/6/charizard-FIX.dae"
   },
   {
     "name": "Squirtle",
     "num": 7,
     "mr_id": 9159,
-    "path": "mons/7/Pokemon XY/Squirtle/Squirtle_OpenCollada.DAE"
+    "path": "./mons/7/Squirtle_OpenCollada.DAE"
   },
   {
     "name": "Wartortle",
     "num": 8,
     "mr_id": 9160,
-    "path": "mons/8/Pokemon XY/Wartortle/Wartortle_ColladaMax.DAE"
+    "path": "./mons/8/wortotle-FIX.dae"
   },
   {
     "name": "Blastoise",
     "num": 9,
     "mr_id": 9161,
-    "path": "mons/9/Pokemon XY/Blastoise/Blastoise_ColladaMax.DAE"
+    "path": "./mons/9/blastoise-FIX-partial.dae"
   },
   {
     "name": "Caterpie",
     "num": 10,
     "mr_id": 9321,
-    "path": "mons/10/Pokemon XY/Caterpie/Caterpie_OpenCollada.DAE"
+    "path": "./mons/10/Caterpie_OpenCollada.DAE"
   },
   {
     "name": "Metapod",
