@@ -30,9 +30,13 @@
 		});
 	}
 
-	const swapPokemon = async event => {
+	const handleLinkClick = event => {
 		event.preventDefault();
 		const num = event.target.getAttribute('data-num');
+		swapPokemon(num);
+	}
+
+	const swapPokemon = async num => {
 		const pokemon = pokemonHash[num];
 		if (currentScenePokemon) {
 			scene.remove(currentScenePokemon);
@@ -71,12 +75,16 @@
 			const a = document.createElement('a');
 			a.innerHTML = pokemon.name;
 			a.href = '';
-			a.addEventListener('click', swapPokemon);
+			a.addEventListener('click', handleLinkClick);
 			a.setAttribute('data-num', pokemon.num);
 			li.appendChild(a);
 			ol.appendChild(li);
 		});
 		document.querySelector('#left').appendChild(ol);
+		const randKey = Object.keys(pokemonHash)[Math.floor(Math.random() * Object.keys(pokemonHash).length - 1)];
+		console.log();
+		const randMon = pokemonHash[randKey];
+		swapPokemon(randMon.num);
 		///////////////////////////////////////////////////////////////
 	}
 	loadPokemonHash();

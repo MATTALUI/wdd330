@@ -183,61 +183,61 @@
     "name": "Nidoqueen",
     "num": 31,
     "mr_id": 8138,
-    "path": "mons/31/Pokemon XY/Nidoqueen/Nidoqueen_ColladaMax.DAE"
+    "path": "./mons/31/nidoqueen-FIX.dae"
   },
   {
     "name": "Nidoran♂",
     "num": 32,
     "mr_id": 8139,
-    "path": "mons/32/Pokemon XY/NidoranM/NidoranM_ColladaMax.DAE"
+    "path": "pokedex/mons/33/nidorin-FIX.dae"
   },
   {
     "name": "Nidorino",
     "num": 33,
     "mr_id": 8140,
-    "path": "mons/33/Pokemon XY/Nidorino/Nidorino_ColladaMax.DAE"
+    "path": "./mons/33/nidorin-FIX.dae"
   },
   {
     "name": "Nidoking",
     "num": 34,
     "mr_id": 8141,
-    "path": "mons/34/Pokemon XY/Nidoking/Nidoking_OpenCollada.DAE"
+    "path": "./mons/34/Nidoking_OpenCollada.DAE"
   },
   {
     "name": "Clefairy",
     "num": 35,
     "mr_id": 8375,
-    "path": "mons/35/035. Clefairy/clefairy.dae"
+    "path": "./mons/35/clefairy.dae"
   },
   {
     "name": "Clefable",
     "num": 36,
     "mr_id": 10693,
-    "path": "mons/36/Pokemon XY/Clefable/Clefable.DAE"
+    "path": "./mons/36/Clefable.DAE"
   },
   {
     "name": "Vulpix",
     "num": 37,
     "mr_id": 10694,
-    "path": "mons/37/Pokemon XY/Vulpix/Vulpix.DAE"
+    "path": "./mons/37/Vulpix.DAE"
   },
   {
     "name": "Ninetales",
     "num": 38,
     "mr_id": 10695,
-    "path": "mons/38/Pokemon XY/Ninetales/Ninetales.DAE"
+    "path": "./mons/38/Ninetales.DAE"
   },
   {
     "name": "Jigglypuff",
     "num": 39,
     "mr_id": 10696,
-    "path": "mons/39/Pokemon XY/Jigglypuff/Jigglypuff.DAE"
+    "path": "./mons/39/Jigglypuff.DAE"
   },
   {
     "name": "Wigglytuff",
     "num": 40,
     "mr_id": 10697,
-    "path": "mons/40/Pokemon XY/Wigglytuff/Wigglytuff.DAE"
+    "path": "./mons/40/Wigglytuff.DAE"
   },
   {
     "name": "Zubat",
