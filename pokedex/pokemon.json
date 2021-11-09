@@ -1,0 +1,896 @@
+[
+  {
+    "name": "Bulbasaur",
+    "num": 1,
+    "mr_id": 9318,
+    "path": "/pokedex/mons/1/Bulbasaur_OpenCollada.DAE"
+  },
+  {
+    "name": "Ivysaur",
+    "num": 2,
+    "mr_id": 9319,
+    "path": "/pokedex/mons/2/Ivysaur_OpenCollada.DAE"
+  },
+  {
+    "name": "Venusaur",
+    "num": 3,
+    "mr_id": 9320,
+    "path": "/pokedex/mons/3/VenusaurM_OpenCollada.DAE"
+  },
+  {
+    "name": "Charmander",
+    "num": 4,
+    "mr_id": 9156,
+    "path": "/pokedex/mons/4/charmander-FIX.dae"
+  },
+  {
+    "name": "Charmeleon",
+    "num": 5,
+    "mr_id": 9157,
+    "path": "mons/5/Pokemon XY/Charmeleon/Charmeleon_ColladaMax.DAE"
+  },
+  {
+    "name": "Charizard",
+    "num": 6,
+    "mr_id": 9158,
+    "path": "mons/6/Pokemon XY/Charizard/charizard-FIX.dae"
+  },
+  {
+    "name": "Squirtle",
+    "num": 7,
+    "mr_id": 9159,
+    "path": "mons/7/Pokemon XY/Squirtle/Squirtle_OpenCollada.DAE"
+  },
+  {
+    "name": "Wartortle",
+    "num": 8,
+    "mr_id": 9160,
+    "path": "mons/8/Pokemon XY/Wartortle/Wartortle_ColladaMax.DAE"
+  },
+  {
+    "name": "Blastoise",
+    "num": 9,
+    "mr_id": 9161,
+    "path": "mons/9/Pokemon XY/Blastoise/Blastoise_ColladaMax.DAE"
+  },
+  {
+    "name": "Caterpie",
+    "num": 10,
+    "mr_id": 9321,
+    "path": "mons/10/Pokemon XY/Caterpie/Caterpie_OpenCollada.DAE"
+  },
+  {
+    "name": "Metapod",
+    "num": 11,
+    "mr_id": 9322,
+    "path": "mons/11/Pokemon XY/Metapod/Metapod_OpenCollada.DAE"
+  },
+  {
+    "name": "Butterfree",
+    "num": 12,
+    "mr_id": 9323,
+    "path": "mons/12/Pokemon XY/Butterfree/ButterfreeM_OpenCollada.DAE"
+  },
+  {
+    "name": "Weedle",
+    "num": 13,
+    "mr_id": 10680,
+    "path": "mons/13/Pokemon XY/Weedle/Weedle.DAE"
+  },
+  {
+    "name": "Kakuna",
+    "num": 14,
+    "mr_id": 10681,
+    "path": "mons/14/Pokemon XY/Kakuna/Kakuna.DAE"
+  },
+  {
+    "name": "Beedrill",
+    "num": 15,
+    "mr_id": 10682,
+    "path": "mons/15/Pokemon XY/Beedrill/Beedrill.DAE"
+  },
+  {
+    "name": "Pidgey",
+    "num": 16,
+    "mr_id": 10684,
+    "path": "mons/16/Pokemon XY/Pidgey/Pidgey.DAE"
+  },
+  {
+    "name": "Pidgeotto",
+    "num": 17,
+    "mr_id": 10685,
+    "path": "mons/17/Pokemon XY/Pidgeotto/Pidgeotto.DAE"
+  },
+  {
+    "name": "Pidgeot",
+    "num": 18,
+    "mr_id": 10686,
+    "path": "mons/18/Pokemon XY/Pidgeot/Pidgeot.DAE"
+  },
+  {
+    "name": "Rattata",
+    "num": 19,
+    "mr_id": 10688,
+    "path": "mons/19/Pokemon XY/Rattata/Rattata_M.DAE"
+  },
+  {
+    "name": "Raticate",
+    "num": 20,
+    "mr_id": 10689,
+    "path": "mons/20/Pokemon XY/Raticate/Raticate_M.DAE"
+  },
+  {
+    "name": "Spearow",
+    "num": 21,
+    "mr_id": 10690,
+    "path": "mons/21/Pokemon XY/Spearow/Spearow.DAE"
+  },
+  {
+    "name": "Fearow",
+    "num": 22,
+    "mr_id": 10691,
+    "path": "mons/22/Pokemon XY/Fearow/Fearow.DAE"
+  },
+  {
+    "name": "Ekans",
+    "num": 23,
+    "mr_id": 8817,
+    "path": "mons/23/Pokemon XY/Ekans/Ekans_ColladaMax.DAE"
+  },
+  {
+    "name": "Arbok",
+    "num": 24,
+    "mr_id": 10692,
+    "path": "mons/24/Pokemon XY/Arbok/Arbok_OpenCollada.DAE"
+  },
+  {
+    "name": "Pikachu",
+    "num": 25,
+    "mr_id": 8612,
+    "path": "mons/25/Pokemon XY/Pikachu/PikachuM_ColladaMax.DAE"
+  },
+  {
+    "name": "Raichu",
+    "num": 26,
+    "mr_id": 8613,
+    "path": "mons/26/Pokemon XY/Raichu/RaichuM_ColladaMax.DAE"
+  },
+  {
+    "name": "Sandshrew",
+    "num": 27,
+    "mr_id": 10511,
+    "path": "mons/27/Pokemon XY/Sandshrew/Sandshrew_OpenCollada.DAE"
+  },
+  {
+    "name": "Sandslash",
+    "num": 28,
+    "mr_id": 10512,
+    "path": "mons/28/Pokemon XY/Sandslash/Sandslash_OpenCollada.DAE"
+  },
+  {
+    "name": "Nidoran♀",
+    "num": 29,
+    "mr_id": 7952,
+    "path": "mons/29/Pokemon XY/NidoranF/NidoranF_ColladaMax.DAE"
+  },
+  {
+    "name": "Nidorina",
+    "num": 30,
+    "mr_id": 7953,
+    "path": "mons/30/Pokemon XY/Nidorina/Nidorina_ColladaMax.DAE"
+  },
+  {
+    "name": "Nidoqueen",
+    "num": 31,
+    "mr_id": 8138,
+    "path": "mons/31/Pokemon XY/Nidoqueen/Nidoqueen_ColladaMax.DAE"
+  },
+  {
+    "name": "Nidoran♂",
+    "num": 32,
+    "mr_id": 8139,
+    "path": "mons/32/Pokemon XY/NidoranM/NidoranM_ColladaMax.DAE"
+  },
+  {
+    "name": "Nidorino",
+    "num": 33,
+    "mr_id": 8140,
+    "path": "mons/33/Pokemon XY/Nidorino/Nidorino_ColladaMax.DAE"
+  },
+  {
+    "name": "Nidoking",
+    "num": 34,
+    "mr_id": 8141,
+    "path": "mons/34/Pokemon XY/Nidoking/Nidoking_OpenCollada.DAE"
+  },
+  {
+    "name": "Clefairy",
+    "num": 35,
+    "mr_id": 8375,
+    "path": "mons/35/035. Clefairy/clefairy.dae"
+  },
+  {
+    "name": "Clefable",
+    "num": 36,
+    "mr_id": 10693,
+    "path": "mons/36/Pokemon XY/Clefable/Clefable.DAE"
+  },
+  {
+    "name": "Vulpix",
+    "num": 37,
+    "mr_id": 10694,
+    "path": "mons/37/Pokemon XY/Vulpix/Vulpix.DAE"
+  },
+  {
+    "name": "Ninetales",
+    "num": 38,
+    "mr_id": 10695,
+    "path": "mons/38/Pokemon XY/Ninetales/Ninetales.DAE"
+  },
+  {
+    "name": "Jigglypuff",
+    "num": 39,
+    "mr_id": 10696,
+    "path": "mons/39/Pokemon XY/Jigglypuff/Jigglypuff.DAE"
+  },
+  {
+    "name": "Wigglytuff",
+    "num": 40,
+    "mr_id": 10697,
+    "path": "mons/40/Pokemon XY/Wigglytuff/Wigglytuff.DAE"
+  },
+  {
+    "name": "Zubat",
+    "num": 41,
+    "mr_id": 8668,
+    "path": "mons/41/041. Zubat/zubat_m.dae"
+  },
+  {
+    "name": "Golbat",
+    "num": 42,
+    "mr_id": 8671,
+    "path": "mons/42/042. Golbat/golbat_m.dae"
+  },
+  {
+    "name": "Oddish",
+    "num": 43,
+    "mr_id": 10751,
+    "path": "mons/43/Pokemon XY/Oddish/Oddish.DAE"
+  },
+  {
+    "name": "Gloom",
+    "num": 44,
+    "mr_id": 10752,
+    "path": "mons/44/Pokemon XY/Gloom/Gloom_M.DAE"
+  },
+  {
+    "name": "Vileplume",
+    "num": 45,
+    "mr_id": 10753,
+    "path": "mons/45/Pokemon XY/Vileplume/Vileplume_M.DAE"
+  },
+  {
+    "name": "Paras",
+    "num": 46,
+    "mr_id": 10754,
+    "path": "mons/46/Pokemon XY/Paras/Paras.DAE"
+  },
+  {
+    "name": "Parasect",
+    "num": 47,
+    "mr_id": 10755,
+    "path": "mons/47/Pokemon XY/Parasect/Parasect.DAE"
+  },
+  {
+    "name": "Venonat",
+    "num": 48,
+    "mr_id": 10756,
+    "path": "mons/48/Pokemon XY/Venonat/Venonat.DAE"
+  },
+  {
+    "name": "Venomoth",
+    "num": 49,
+    "mr_id": 10757,
+    "path": "mons/49/Pokemon XY/Venomoth/Venomoth.DAE"
+  },
+  {
+    "name": "Diglett",
+    "num": 50,
+    "mr_id": 10758,
+    "path": "mons/50/Pokemon XY/Diglett/Diglett.DAE"
+  },
+  {
+    "name": "Dugtrio",
+    "num": 51,
+    "mr_id": 10759,
+    "path": "mons/51/Pokemon XY/Dugtrio/Dugtrio.DAE"
+  },
+  {
+    "name": "Meowth",
+    "num": 52,
+    "mr_id": 10760,
+    "path": "mons/52/Pokemon XY/Meowth/Meowth.DAE"
+  },
+  {
+    "name": "Persian",
+    "num": 53,
+    "mr_id": 10761,
+    "path": "mons/53/Pokemon XY/Persian/Persian.DAE"
+  },
+  {
+    "name": "Psyduck",
+    "num": 54,
+    "mr_id": 11357,
+    "path": "mons/54/Pokemon XY/Psyduck/Psyduck.DAE"
+  },
+  {
+    "name": "Golduck",
+    "num": 55,
+    "mr_id": 11358,
+    "path": "mons/55/Pokemon XY/Golduck/Golduck.DAE"
+  },
+  {
+    "name": "Mankey",
+    "num": 56,
+    "mr_id": 11359,
+    "path": "mons/56/Pokemon XY/Mankey/Mankey.DAE"
+  },
+  {
+    "name": "Primeape",
+    "num": 57,
+    "mr_id": 11360,
+    "path": "mons/57/Pokemon XY/Primeape/Primeape.DAE"
+  },
+  {
+    "name": "Growlithe",
+    "num": 58,
+    "mr_id": 11361,
+    "path": "mons/58/Pokemon XY/Growlithe/Growlithe.DAE"
+  },
+  {
+    "name": "Arcanine",
+    "num": 59,
+    "mr_id": 10517,
+    "path": "mons/59/Pokemon XY/Arcanine/Arcanine_OpenCollada.DAE"
+  },
+  {
+    "name": "Poliwag",
+    "num": 60,
+    "mr_id": 8374,
+    "path": "mons/60/060. Poliwag/poliwag.dae"
+  },
+  {
+    "name": "Poliwhirl",
+    "num": 61,
+    "mr_id": 11362,
+    "path": "mons/61/Pokemon XY/Poliwhirl/Poliwhirl.DAE"
+  },
+  {
+    "name": "Poliwrath",
+    "num": 62,
+    "mr_id": 11363,
+    "path": "mons/62/Pokemon XY/Poliwrath/Poliwrath.DAE"
+  },
+  {
+    "name": "Abra",
+    "num": 63,
+    "mr_id": 10518,
+    "path": "mons/63/Pokemon XY/Abra/Abra_OpenCollada.DAE"
+  },
+  {
+    "name": "Kadabra",
+    "num": 64,
+    "mr_id": 10519,
+    "path": "mons/64/Pokemon XY/Kadabra/KadabraM_OpenCollada.DAE"
+  },
+  {
+    "name": "Alakazam",
+    "num": 65,
+    "mr_id": 8331,
+    "path": "mons/65/Pokemon XY/Alakazam/AlakazamM_ColladaMax.DAE"
+  },
+  {
+    "name": "Machop",
+    "num": 66,
+    "mr_id": 8153,
+    "path": "mons/66/Pokemon XY/Machop/Machop_ColladaMax.DAE"
+  },
+  {
+    "name": "Machoke",
+    "num": 67,
+    "mr_id": 8154,
+    "path": "mons/67/Pokemon XY/Machoke/Machoke_ColladaMax.DAE"
+  },
+  {
+    "name": "Machamp",
+    "num": 68,
+    "mr_id": 8155,
+    "path": "mons/68/Pokemon XY/Machamp/Machamp_ColladaMax.DAE"
+  },
+  {
+    "name": "Bellsprout",
+    "num": 69,
+    "mr_id": 11364,
+    "path": "mons/69/Pokemon XY/Bellsprout/Bellsprout.DAE"
+  },
+  {
+    "name": "Weepinbell",
+    "num": 70,
+    "mr_id": 8156,
+    "path": "mons/70/Pokemon XY/Weepinbell/Weepinbell_ColladaMax.DAE"
+  },
+  {
+    "name": "Victreebel",
+    "num": 71,
+    "mr_id": 11365,
+    "path": "mons/71/Pokemon XY/Victreebel/Victreebel.DAE"
+  },
+  {
+    "name": "Tentacool",
+    "num": 72,
+    "mr_id": 11366,
+    "path": "mons/72/Pokemon XY/Tentacool/Tentacool.DAE"
+  },
+  {
+    "name": "Tentacruel",
+    "num": 73,
+    "mr_id": 11367,
+    "path": "mons/73/Pokemon XY/Tentacruel/Tentacruel.DAE"
+  },
+  {
+    "name": "Geodude",
+    "num": 74,
+    "mr_id": 11368,
+    "path": "mons/74/Pokemon XY/Geodude/Geodude.DAE"
+  },
+  {
+    "name": "Graveler",
+    "num": 75,
+    "mr_id": 11369,
+    "path": "mons/75/Pokemon XY/Graveler/Graveler.DAE"
+  },
+  {
+    "name": "Golem",
+    "num": 76,
+    "mr_id": 11370,
+    "path": "mons/76/Pokemon XY/Golem/Golem.DAE"
+  },
+  {
+    "name": "Ponyta",
+    "num": 77,
+    "mr_id": 16797,
+    "path": "mons/77/Pokemon XY/Ponyta/Ponyta_OpenCollada.DAE"
+  },
+  {
+    "name": "Rapidash",
+    "num": 78,
+    "mr_id": 16798,
+    "path": "mons/78/Pokemon XY/Rapidash/Rapidash_OpenCollada.DAE"
+  },
+  {
+    "name": "Slowpoke",
+    "num": 79,
+    "mr_id": 9162,
+    "path": "mons/79/Pokemon XY/Slowpoke/Slowpoke_ColladaMax.DAE"
+  },
+  {
+    "name": "Slowbro",
+    "num": 80,
+    "mr_id": 8332,
+    "path": "mons/80/Pokemon XY/Slowbro/Slowbro_ColladaMax.DAE"
+  },
+  {
+    "name": "Magnemite",
+    "num": 81,
+    "mr_id": 13579,
+    "path": "mons/81/Magnemite/pm0081_00.dae"
+  },
+  {
+    "name": "Magneton",
+    "num": 82,
+    "mr_id": 13580,
+    "path": "mons/82/Magneton/pm0082_00.dae"
+  },
+  {
+    "name": "Farfetch'd",
+    "num": 83,
+    "mr_id": 16799,
+    "path": "mons/83/Pokemon XY/Farfetch'd/Farfetch'd_OpenCollada.DAE"
+  },
+  {
+    "name": "Doduo",
+    "num": 84,
+    "mr_id": 16800,
+    "path": "mons/84/Pokemon XY/Doduo/DoduoM_OpenCollada.DAE"
+  },
+  {
+    "name": "Dodrio",
+    "num": 85,
+    "mr_id": 16801,
+    "path": "mons/85/Pokemon XY/Dodrio/DodrioM_OpenCollada.DAE"
+  },
+  {
+    "name": "Seel",
+    "num": 86,
+    "mr_id": 16802,
+    "path": "mons/86/Pokemon XY/Seel/Seel_OpenCollada.DAE"
+  },
+  {
+    "name": "Dewgong",
+    "num": 87,
+    "mr_id": 16803,
+    "path": "mons/87/Pokemon XY/Dewgong/Dewgong_OpenCollada.DAE"
+  },
+  {
+    "name": "Grimer",
+    "num": 88,
+    "mr_id": 13872,
+    "path": "mons/88/Grimer/pm0088_00.dae"
+  },
+  {
+    "name": "Muk",
+    "num": 89,
+    "mr_id": 13873,
+    "path": "mons/89/Muk/pm0089_00.dae"
+  },
+  {
+    "name": "Shellder",
+    "num": 90,
+    "mr_id": 15106,
+    "path": "mons/90/Shellder/pm0090_00.dae"
+  },
+  {
+    "name": "Cloyster",
+    "num": 91,
+    "mr_id": 15107,
+    "path": "mons/91/Cloyster/pm0091_00.dae"
+  },
+  {
+    "name": "Haunter",
+    "num": 93,
+    "mr_id": 23146,
+    "path": "mons/93/Haunter/Haunter.dae"
+  },
+  {
+    "name": "Gengar",
+    "num": 94,
+    "mr_id": 8818,
+    "path": "mons/94/Pokemon XY/Gengar/Gengar_ColladaMax.DAE"
+  },
+  {
+    "name": "Onix",
+    "num": 95,
+    "mr_id": 18047,
+    "path": "mons/95/Onix/Onix.dae"
+  },
+  {
+    "name": "Drowzee",
+    "num": 96,
+    "mr_id": 23138,
+    "path": "mons/96/Drowzee/Drowzee.dae"
+  },
+  {
+    "name": "Krabby",
+    "num": 98,
+    "mr_id": 23139,
+    "path": "mons/98/Krabby/Krabby.dae"
+  },
+  {
+    "name": "Kingler",
+    "num": 99,
+    "mr_id": 24833,
+    "path": "mons/99/Kingler/Kingler.dae"
+  },
+  {
+    "name": "Voltorb",
+    "num": 100,
+    "mr_id": 13874,
+    "path": "mons/100/Voltorb/pm0100_00.dae"
+  },
+  {
+    "name": "Electrode",
+    "num": 101,
+    "mr_id": 23140,
+    "path": "mons/101/Electrode/Electrode.dae"
+  },
+  {
+    "name": "Exeggcute",
+    "num": 102,
+    "mr_id": 24834,
+    "path": "mons/102/Exeggcute/Exeggcute.dae"
+  },
+  {
+    "name": "Exeggutor",
+    "num": 103,
+    "mr_id": 24835,
+    "path": "mons/103/Exeggutor/Exeggutor.dae"
+  },
+  {
+    "name": "Cubone",
+    "num": 104,
+    "mr_id": 8157,
+    "path": "mons/104/Pokemon XY/Cubone/Cubone_ColladaMax.DAE"
+  },
+  {
+    "name": "Marowak",
+    "num": 105,
+    "mr_id": 8158,
+    "path": "mons/105/Pokemon XY/Marowak/Marowak_ColladaMax.DAE"
+  },
+  {
+    "name": "Hitmonlee",
+    "num": 106,
+    "mr_id": 23643,
+    "path": "mons/106/Hitmonlee/Hitmonlee.dae"
+  },
+  {
+    "name": "Hitmonchan",
+    "num": 107,
+    "mr_id": 9325,
+    "path": "mons/107/Pokemon XY/Hitmonchan/Hitmonchan_OpenCollada.DAE"
+  },
+  {
+    "name": "Lickitung",
+    "num": 108,
+    "mr_id": 23647,
+    "path": "mons/108/Lickitung/Lickitung.dae"
+  },
+  {
+    "name": "Koffing",
+    "num": 109,
+    "mr_id": 24836,
+    "path": "mons/109/Koffing/Koffing.dae"
+  },
+  {
+    "name": "Weezing",
+    "num": 110,
+    "mr_id": 23147,
+    "path": "mons/110/Weezing/Weezing.dae"
+  },
+  {
+    "name": "Rhyhorn",
+    "num": 111,
+    "mr_id": 23648,
+    "path": "mons/111/Rhyhorn/Rhyhorn.dae"
+  },
+  {
+    "name": "Rhydon",
+    "num": 112,
+    "mr_id": 10513,
+    "path": "mons/112/Pokemon XY/Rhydon/RhydonM_ColladaMax.DAE"
+  },
+  {
+    "name": "Chansey",
+    "num": 113,
+    "mr_id": 24837,
+    "path": "mons/113/Chansey/Chansey.dae"
+  },
+  {
+    "name": "Tangela",
+    "num": 114,
+    "mr_id": 23141,
+    "path": "mons/114/Tangela/Tangela.dae"
+  },
+  {
+    "name": "Kangaskhan",
+    "num": 115,
+    "mr_id": 8333,
+    "path": "mons/115/Pokemon XY/Kangaskhan/Kangaskhan_ColladaMax.DAE"
+  },
+  {
+    "name": "Horsea",
+    "num": 116,
+    "mr_id": 24838,
+    "path": "mons/116/Horsea/Horsea.dae"
+  },
+  {
+    "name": "Seadra",
+    "num": 117,
+    "mr_id": 23145,
+    "path": "mons/117/Seadra/Seadra.dae"
+  },
+  {
+    "name": "Goldeen",
+    "num": 118,
+    "mr_id": 24839,
+    "path": "mons/118/Goldeen/Goldeen_M.dae"
+  },
+  {
+    "name": "Seaking",
+    "num": 119,
+    "mr_id": 24840,
+    "path": "mons/119/Seaking/Seaking_M.dae"
+  },
+  {
+    "name": "Staryu",
+    "num": 120,
+    "mr_id": 13875,
+    "path": "mons/120/Staryu/pm0120_00.dae"
+  },
+  {
+    "name": "Starmie",
+    "num": 121,
+    "mr_id": 13876,
+    "path": "mons/121/Starmie/pm0121_00.dae"
+  },
+  {
+    "name": "Mr. Mime",
+    "num": 122,
+    "mr_id": 9326,
+    "path": "mons/122/Pokemon XY/Mr. Mime/MrMime_OpenCollada.DAE"
+  },
+  {
+    "name": "Scyther",
+    "num": 123,
+    "mr_id": 13115,
+    "path": "mons/123/Pokemon XY/Scyther/Scyther_OpenCollada.DAE"
+  },
+  {
+    "name": "Jynx",
+    "num": 124,
+    "mr_id": 23646,
+    "path": "mons/124/Jynx/Jynx.dae"
+  },
+  {
+    "name": "Electabuzz",
+    "num": 125,
+    "mr_id": 23144,
+    "path": "mons/125/Electabuzz/Electabuzz.dae"
+  },
+  {
+    "name": "Magmar",
+    "num": 126,
+    "mr_id": 24841,
+    "path": "mons/126/Magmar/Magmar.dae"
+  },
+  {
+    "name": "Pinsir",
+    "num": 127,
+    "mr_id": 8357,
+    "path": "mons/127/Pokemon XY/Pinsir/Pinsir_ColladaMax.DAE"
+  },
+  {
+    "name": "Tauros",
+    "num": 128,
+    "mr_id": 23645,
+    "path": "mons/128/Tauros/Tauros.dae"
+  },
+  {
+    "name": "Magikarp",
+    "num": 129,
+    "mr_id": 10520,
+    "path": "mons/129/Pokemon XY/Magikarp/MagikarpM_OpenCollada.DAE"
+  },
+  {
+    "name": "Gyarados",
+    "num": 130,
+    "mr_id": 10521,
+    "path": "mons/130/Pokemon XY/Gyarados/GyaradosM_OpenCollada.DAE"
+  },
+  {
+    "name": "Lapras",
+    "num": 131,
+    "mr_id": 23644,
+    "path": "mons/131/Lapras/Lapras.dae"
+  },
+  {
+    "name": "Ditto",
+    "num": 132,
+    "mr_id": 13581,
+    "path": "mons/132/Ditto/pm0132_00.dae"
+  },
+  {
+    "name": "Eevee",
+    "num": 133,
+    "mr_id": 8614,
+    "path": "mons/133/Pokemon XY/Eevee/Eevee_ColladaMax.DAE"
+  },
+  {
+    "name": "Vaporeon",
+    "num": 134,
+    "mr_id": 8819,
+    "path": "mons/134/Pokemon XY/Vaporeon/Vaporeon_ColladaMax.DAE"
+  },
+  {
+    "name": "Jolteon",
+    "num": 135,
+    "mr_id": 8820,
+    "path": "mons/135/Pokemon XY/Jolteon/Jolteon_ColladaMax.DAE"
+  },
+  {
+    "name": "Flareon",
+    "num": 136,
+    "mr_id": 8821,
+    "path": "mons/136/Pokemon XY/Flareon/Flareon_ColladaMax.DAE"
+  },
+  {
+    "name": "Porygon",
+    "num": 137,
+    "mr_id": 8159,
+    "path": "mons/137/Pokemon XY/Porygon/Porygon_ColladaMax.DAE"
+  },
+  {
+    "name": "Omanyte",
+    "num": 138,
+    "mr_id": 8118,
+    "path": "mons/138/Pokemon XY/Omanyte/Omanyte_ColladaMax.DAE"
+  },
+  {
+    "name": "Omastar",
+    "num": 139,
+    "mr_id": 9164,
+    "path": "mons/139/Pokemon XY/Omastar/Omastar_ColladaMax.DAE"
+  },
+  {
+    "name": "Kabuto",
+    "num": 140,
+    "mr_id": 23142,
+    "path": "mons/140/Kabuto/Kabuto.dae"
+  },
+  {
+    "name": "Kabutops",
+    "num": 141,
+    "mr_id": 23143,
+    "path": "mons/141/Kabutops/Kabutops.dae"
+  },
+  {
+    "name": "Aerodactyl",
+    "num": 142,
+    "mr_id": 8358,
+    "path": "mons/142/Pokemon XY/Aerodactyl/Aerodactyl_ColladaMax.DAE"
+  },
+  {
+    "name": "Snorlax",
+    "num": 143,
+    "mr_id": 8660,
+    "path": "mons/143/143. Snorlax/snorlax.dae"
+  },
+  {
+    "name": "Articuno",
+    "num": 144,
+    "mr_id": 9327,
+    "path": "mons/144/Pokemon XY/Articuno/Articuno_OpenCollada.DAE"
+  },
+  {
+    "name": "Zapdos",
+    "num": 145,
+    "mr_id": 9328,
+    "path": "mons/145/Pokemon XY/Zapdos/Zapdos_OpenCollada.DAE"
+  },
+  {
+    "name": "Moltres",
+    "num": 146,
+    "mr_id": 9329,
+    "path": "mons/146/Pokemon XY/Moltres/Moltres_OpenCollada.DAE"
+  },
+  {
+    "name": "Dratini",
+    "num": 147,
+    "mr_id": 10522,
+    "path": "mons/147/Pokemon XY/Dratini/Dratini_OpenCollada.dae"
+  },
+  {
+    "name": "Dragonair",
+    "num": 148,
+    "mr_id": 10523,
+    "path": "mons/148/Pokemon XY/Dragonair/Dragonair_OpenCollada.DAE"
+  },
+  {
+    "name": "Dragonite",
+    "num": 149,
+    "mr_id": 10524,
+    "path": "mons/149/Pokemon XY/Dragonite/Dragonite_OpenCollada.DAE"
+  },
+  {
+    "name": "Mewtwo",
+    "num": 150,
+    "mr_id": 8822,
+    "path": "mons/150/Pokemon XY/Mewtwo/Mewtwo_ColladaMax.DAE"
+  },
+  {
+    "name": "Mew",
+    "num": 151,
+    "mr_id": 8334,
+    "path": "mons/151/Pokemon XY/Mew/Mew_ColladaMax.DAE"
+  }
+]
