@@ -1,60 +1,81 @@
-const scene = new THREE.Scene();
-const container = document.querySelector('#dex-comtainer');
-const canvas = document.querySelector('#dex-screen');
-const camera = new THREE.PerspectiveCamera( 400, window.innerWidth / window.innerHeight, 0.1, 1000 );
+(async () => {
+	const scene = new THREE.Scene();
+	const container = document.querySelector('#dex-comtainer');
+	const canvas = document.querySelector('#dex-screen');
+	const camera = new THREE.PerspectiveCamera( 400, window.innerWidth / window.innerHeight, 0.1, 1000 );
+	const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+	const hlight = new THREE.AmbientLight(0x020202, 100);
+	const dLight = new THREE.DirectionalLight(0x000000, 100);
+	const controls = new THREE.OrbitControls( camera, renderer.domElement );
+	const loader = new THREE.ColladaLoader();
+	const pokemonHash = {};
+	let currentScenePokemon = null;
 
-const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-renderer.setSize(container.offsetWidth, window.innerHeight/2);
+	renderer.setSize(container.offsetWidth, window.innerHeight/2);
+	camera.position.set( 1, 1, 20 );
+	scene.add(hlight);
+	dLight.position.set(0,1,0);
+	dLight.castShadow = true;
+	scene.add(dLight);
 
-camera.position.set( 1, 1, 20 );
-
-const hlight = new THREE.AmbientLight(0x020202, 100);
-scene.add(hlight);
-
-const dLight = new THREE.DirectionalLight(0x000000, 100);
-dLight.position.set(0,1,0);
-dLight.castShadow = true;
-scene.add(dLight);
-
-const controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
-const loader = new THREE.ColladaLoader();
-
-document.addEventListener('keypress', function(event) {
-	const { keyCode } = event;
-	if (keyCode === 32 && mons.length) {
-		console.log('Swap mons');
-		scene.remove(mons[currentIndex]);
-		currentIndex++;
-		if (currentIndex === mons.length) {
-			currentIndex = 0;
-		}
-		scene.add(mons[currentIndex]);
+	const toggleSceneSpinner = () => {
+		// TODO: implement this later...
 	}
-});
 
-let currentIndex = 0;
-let mons = [];
-	
-async function loadMons() {
-	const data = await fetch('./temp.json');
-	const pokemon = await data.json();
-	await Promise.all(pokemon.map(pokemon => new Promise((resolve, rej) => {
-		loader.load(pokemon.path, function (result) {
-		result.scene.name = pokemon.name;
-		mons.push(result.scene);
-		resolve();
+	const swapPokemon = async event => {
+		event.preventDefault();
+		const num = event.target.getAttribute('data-num');
+		const pokemon = pokemonHash[num];
+		if (currentScenePokemon) {
+			scene.remove(currentScenePokemon);
+			currentScenePokemon = null;
+			toggleSceneSpinner();
+		}
+		if (pokemon.scene) {
+			scene.add(pokemon.scene);
+			currentScenePokemon = pokemon.scene;
+			toggleSceneSpinner();
+		} else {
+			loader.load(pokemon.path, function (result) {
+				pokemon.scene = result.scene;
+				pokemon.scene.name = pokemon.name;
+				scene.add(pokemon.scene);
+				currentScenePokemon = pokemon.scene;
+				toggleSceneSpinner();
+			});
+		}
+	}
+
+	async function loadPokemonHash() {
+		const data = await fetch('./pokemon.json');
+		const pokemon = await data.json();
+		pokemon.forEach(pokemon => {
+			pokemonHash[pokemon.num] = pokemon;
+			pokemonHash[pokemon.num].scene = null;
 		});
-	})));
-	scene.add(mons[currentIndex]);
-	animate();
-	
-}
-loadMons();
+		
+		// NOTE: This is just temporary until we get services hooked up
+		const ol = document.createElement('ol');
+		
+		pokemon.forEach(pokemon => {
+			const li = document.createElement('li');
+			const a = document.createElement('a');
+			a.innerHTML = pokemon.name;
+			a.href = '';
+			a.addEventListener('click', swapPokemon);
+			a.setAttribute('data-num', pokemon.num);
+			li.appendChild(a);
+			ol.appendChild(li);
+		});
+		document.querySelector('#left').appendChild(ol);
+		///////////////////////////////////////////////////////////////
+	}
+	loadPokemonHash();
 
-function animate() {
-	renderer.render( scene, camera );
-	requestAnimationFrame( animate );
-	controls.update();
-}
+	function animate() {
+		renderer.render( scene, camera );
+		requestAnimationFrame( animate );
+		controls.update();
+	}
+	animate();
+})();
