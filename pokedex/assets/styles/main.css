@@ -1,5 +1,6 @@
 html, body {
   height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -13,9 +14,20 @@ img {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
   background: red;
-  border-bottom: 1px solid yellow;
   padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+header a {
+  color: white;
 }
 
 #dex-screen {
@@ -45,7 +57,7 @@ header {
   width: 10rem;
 }
 
-.hidden {
+#dex-orations{
   display: none;
 }
 
@@ -64,8 +76,63 @@ header {
     overflow: hidden;
   }
 
+  .mainbulbcontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    border-top: 5rem solid red;
+    border-right: 10rem solid transparent;
+  }
+
+  .led {
+    display: inline-block;
+    background: black;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    border: 1px solid grey;
+    margin-left: 0.25rem;
+    z-index: 100;
+    position: relative;
+    top: 1.75rem;
+    border-color: black;
+  }
+
+  .led.red {
+    background: radial-gradient(indianred, red);
+  }
+
+  .led.yellow {
+    background: yellow;
+  }
+
+  .led.green {
+    background: radial-gradient(lightgreen, green);
+  }
+
+  .led.main {
+    background: radial-gradient(lightblue, blue);
+    border-width: 2px;
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
+  }
+
   #left {
     overflow: auto;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  #dex-orations{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }
 

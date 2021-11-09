@@ -13,9 +13,9 @@
 
 	renderer.setSize(container.offsetWidth, window.innerHeight/2);
 	camera.position.set( 1, 1, 20 );
-	scene.add(hlight);
 	dLight.position.set(0,1,0);
 	dLight.castShadow = true;
+	scene.add(hlight);
 	scene.add(dLight);
 
 	const toggleSceneSpinner = () => {
