@@ -3,7 +3,7 @@
 (() => {
 
   (async () => {
-    const data = await fetch('./temp.json');
+    const data = await fetch('./pokemon.json');
     const pokemon = await data.json();
     pokemon.forEach(pokemon => {
       POKEDEX.pokemonHash[pokemon.num] = pokemon;
