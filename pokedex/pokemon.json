@@ -189,7 +189,7 @@
     "name": "Nidoran♂",
     "num": 32,
     "mr_id": 8139,
-    "path": "pokedex/mons/33/nidorin-FIX.dae"
+    "path": "./mons/32/nidoran-M-FIX-partial.dae"
   },
   {
     "name": "Nidorino",

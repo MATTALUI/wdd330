@@ -4,10 +4,15 @@
 		<meta charset="utf-8">
 		<title>WDD330 | Pokedex</title>
 		<link rel="stylesheet" href="./assets/styles/main.css">
+		<script src="./assets/js/globals.js" defer></script>
+
 		<script src="./assets/js/three/three.js" defer></script>
 		<script src="./assets/js/three/loaders/ColladaLoader.js" defer></script>
 		<script src="./assets/js/three/OrbitControls.js" defer></script>
 		<script src="./assets/js/three/scene.js" defer></script>
+
+		<script src="./assets/js/initialize.js" defer></script>
+		<script src="./assets/js/ui.js" defer></script>
 		<link rel="icon" type="image/png" href="./assets/images/pokeball.png">
 	</head>
 	<body>
@@ -32,6 +37,33 @@
 				</div>
 			</div>
 			<div id="left">
+				<h2>
+					Search Pokemon
+					<span style="display: inline-block;">
+						<span class="tooltip">
+							?
+							<span class="tooltiptext">
+								Currently, this search is limited to just the first-generation pokemon.
+							</span>
+						</span>
+					</span>
+				</h2>
+				<div id="poke-search">
+					<div id="searchForm">
+						<input id="search-input" type="text" placeholder="Pikachu"/>
+						<button id="search-btn">Search</button>
+						<button id="clear-btn">Clear</button>
+					</div>
+					<div id="poke-results" class="content">
+
+					</div>
+				</div>
+				<div>
+					<h2>My Pokemon Team</h2>
+					<div id="my-team" class="content">
+
+					</div>
+				</div>
 			</div>
 		</main>
 	</body>
