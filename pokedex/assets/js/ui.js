@@ -18,17 +18,17 @@
   const stopPlaceholderRotation = event => {
     clearInterval(inputRotation);
     searchInput.removeEventListener('focus', stopPlaceholderRotation);
-  }
+  };
 
   const seePokemonStats = async event => {
     const pokemonNumber = event.target.getAttribute('data-num');
     console.log(pokemonNumber);
     POKEDEX.swapPokemon(pokemonNumber);
-    const res = await fetch(`https://pokeapi.co/api/v2/${pokemonNumber}`);
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
     const pokemonData = await res.json();
     currentViewPokemon = Pokemon.fromPokemonAPIData(pokemonData);
-    console.log(currentViewPokemon)
-  }
+    console.log(currentViewPokemon);
+  };
 
   const searchPokemon = async event => {
     searchResultsContainer.innerHTML = loaderTemplate;
@@ -56,12 +56,12 @@
         searchResultsContainer.appendChild(resultItemEle);
       });
     }
-  }
+  };
 
 
   const clearSearch = event => {
     searchInput.value = '';
-  }
+  };
 
 
   searchInput.addEventListener('focus', stopPlaceholderRotation);

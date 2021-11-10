@@ -34,11 +34,13 @@ Pokemon.fromPokemonAPIData = function(pokemonAPIData) {
 
     return stats;
   }, {});
-  const types = apiStat.types(t => t.type.name);
+  const types = pokemonAPIData.types.map(t => t.type.name);
   const pokemon = new Pokemon({
     num: pokemonAPIData.id,
     name: pokemonAPIData.species.name,
     sprite: pokemonAPIData.sprites.front_default,
+    height: pokemonAPIData.height,
+    weight: pokemonAPIData.weight,
     stats,
     types,
   });
