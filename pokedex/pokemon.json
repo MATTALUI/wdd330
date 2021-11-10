@@ -369,175 +369,177 @@
     "name": "Poliwrath",
     "num": 62,
     "mr_id": 11363,
-    "path": "mons/62/Pokemon XY/Poliwrath/Poliwrath.DAE"
+    "path": "./mons/62/Poliwrath.DAE"
   },
   {
     "name": "Abra",
     "num": 63,
     "mr_id": 10518,
-    "path": "mons/63/Pokemon XY/Abra/Abra_OpenCollada.DAE"
+    "path": "./mons/63/Abra_OpenCollada.DAE"
   },
   {
     "name": "Kadabra",
     "num": 64,
     "mr_id": 10519,
-    "path": "mons/64/Pokemon XY/Kadabra/KadabraM_OpenCollada.DAE"
+    "path": "./mons/64/KadabraM_OpenCollada.DAE"
   },
   {
     "name": "Alakazam",
     "num": 65,
     "mr_id": 8331,
-    "path": "mons/65/Pokemon XY/Alakazam/AlakazamM_ColladaMax.DAE"
+    "path": "./mons/65/alakazam-M-FIX-partial.dae"
   },
   {
     "name": "Machop",
     "num": 66,
     "mr_id": 8153,
-    "path": "mons/66/Pokemon XY/Machop/Machop_ColladaMax.DAE"
+    "path": "./mons/66/machop-FIX-partial.dae"
   },
   {
     "name": "Machoke",
     "num": 67,
     "mr_id": 8154,
-    "path": "mons/67/Pokemon XY/Machoke/Machoke_ColladaMax.DAE"
+    "path": "./mons/67/machoke-FIX.dae"
   },
   {
     "name": "Machamp",
     "num": 68,
     "mr_id": 8155,
-    "path": "mons/68/Pokemon XY/Machamp/Machamp_ColladaMax.DAE"
+    "path": "./mons/68/machamp-FIX.dae"
   },
   {
     "name": "Bellsprout",
     "num": 69,
     "mr_id": 11364,
-    "path": "mons/69/Pokemon XY/Bellsprout/Bellsprout.DAE"
+    "path": "./mons/69/Bellsprout.DAE"
   },
   {
     "name": "Weepinbell",
     "num": 70,
     "mr_id": 8156,
-    "path": "mons/70/Pokemon XY/Weepinbell/Weepinbell_ColladaMax.DAE"
+    "path": "./mons/70/weepinbell-FIX.dae"
   },
   {
     "name": "Victreebel",
     "num": 71,
     "mr_id": 11365,
-    "path": "mons/71/Pokemon XY/Victreebel/Victreebel.DAE"
+    "path": "./mons/71/Victreebel.DAE"
   },
   {
     "name": "Tentacool",
     "num": 72,
     "mr_id": 11366,
-    "path": "mons/72/Pokemon XY/Tentacool/Tentacool.DAE"
+    "path": "./mons/72/Tentacool.DAE"
   },
   {
     "name": "Tentacruel",
     "num": 73,
     "mr_id": 11367,
-    "path": "mons/73/Pokemon XY/Tentacruel/Tentacruel.DAE"
+    "path": "./mons/73/Tentacruel.DAE"
   },
   {
     "name": "Geodude",
     "num": 74,
     "mr_id": 11368,
-    "path": "mons/74/Pokemon XY/Geodude/Geodude.DAE"
+    "path": "./mons/74/Geodude.DAE"
   },
   {
     "name": "Graveler",
     "num": 75,
     "mr_id": 11369,
-    "path": "mons/75/Pokemon XY/Graveler/Graveler.DAE"
+    "path": "./mons/75/Graveler.DAE"
   },
   {
     "name": "Golem",
     "num": 76,
     "mr_id": 11370,
-    "path": "mons/76/Pokemon XY/Golem/Golem.DAE"
+    "path": "./mons/76/Golem.DAE"
   },
   {
     "name": "Ponyta",
     "num": 77,
     "mr_id": 16797,
-    "path": "mons/77/Pokemon XY/Ponyta/Ponyta_OpenCollada.DAE"
+    "path": "./mons/77/Ponyta_OpenCollada.DAE"
   },
   {
     "name": "Rapidash",
     "num": 78,
     "mr_id": 16798,
-    "path": "mons/78/Pokemon XY/Rapidash/Rapidash_OpenCollada.DAE"
+    "path": "./mons/78/Rapidash_OpenCollada.DAE"
   },
   {
     "name": "Slowpoke",
     "num": 79,
     "mr_id": 9162,
-    "path": "mons/79/Pokemon XY/Slowpoke/Slowpoke_ColladaMax.DAE"
+    "path": "./mons/79/slowpoke-FIX.dae"
   },
   {
     "name": "Slowbro",
     "num": 80,
     "mr_id": 8332,
-    "path": "mons/80/Pokemon XY/Slowbro/Slowbro_ColladaMax.DAE"
+    "path": "./mons/80/slowbro-FIX.dae"
   },
   {
     "name": "Magnemite",
     "num": 81,
     "mr_id": 13579,
-    "path": "mons/81/Magnemite/pm0081_00.dae"
+    "path": "./mons/81/pm0081_00.dae"
   },
   {
     "name": "Magneton",
     "num": 82,
     "mr_id": 13580,
-    "path": "mons/82/Magneton/pm0082_00.dae"
+    "path": "./mons/82/pm0082_00.dae"
   },
   {
     "name": "Farfetch'd",
     "num": 83,
     "mr_id": 16799,
-    "path": "mons/83/Pokemon XY/Farfetch'd/Farfetch'd_OpenCollada.DAE"
+    "path": "./mons/83/Farfetch'd_OpenCollada.DAE"
   },
   {
     "name": "Doduo",
     "num": 84,
     "mr_id": 16800,
-    "path": "mons/84/Pokemon XY/Doduo/DoduoM_OpenCollada.DAE"
+    "path": "./mons/84/DoduoM_OpenCollada.DAE"
   },
   {
     "name": "Dodrio",
     "num": 85,
     "mr_id": 16801,
-    "path": "mons/85/Pokemon XY/Dodrio/DodrioM_OpenCollada.DAE"
+    "path": "./mons/85/DodrioM_OpenCollada.DAE"
   },
   {
     "name": "Seel",
     "num": 86,
     "mr_id": 16802,
-    "path": "mons/86/Pokemon XY/Seel/Seel_OpenCollada.DAE"
+    "path": "./mons/86/Seel_OpenCollada.DAE"
   },
   {
     "name": "Dewgong",
     "num": 87,
     "mr_id": 16803,
-    "path": "mons/87/Pokemon XY/Dewgong/Dewgong_OpenCollada.DAE"
+    "path": "./mons/87/Dewgong_OpenCollada.DAE"
   },
   {
     "name": "Grimer",
     "num": 88,
     "mr_id": 13872,
-    "path": "mons/88/Grimer/pm0088_00.dae"
+    "path": "./mons/88/pm0088_00.dae",
+    "__note": "I think this model is inside out..."
   },
   {
     "name": "Muk",
     "num": 89,
     "mr_id": 13873,
-    "path": "mons/89/Muk/pm0089_00.dae"
+    "path": "./mons/89/pm0089_00.dae",
+    "__note": "I think this model is inside out..."
   },
   {
     "name": "Shellder",
     "num": 90,
     "mr_id": 15106,
-    "path": "mons/90/Shellder/pm0090_00.dae"
+    "path": "./mons/90/pm0090_00.dae"
   },
   {
     "name": "Cloyster",
