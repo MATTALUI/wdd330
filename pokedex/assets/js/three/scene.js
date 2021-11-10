@@ -21,14 +21,6 @@
 		document.querySelector('#loader-container').classList.toggle('hidden');
 	}
 
-	const wait = (ms=500) => {
-		return new Promise((res, rej) => {
-			setTimeout(() => { // Simulate slow for the spinner
-				res();
-			}, ms);
-		});
-	}
-
 	POKEDEX.swapPokemon = async num => {
 		const pokemon = POKEDEX.pokemonHash[num];
 		if (currentScenePokemon) {
@@ -36,7 +28,7 @@
 			currentScenePokemon = null;
 		}
 		toggleSceneSpinner();
-		await wait(); // I made the spinner; you'll see it, dang it!
+		await POKEDEX.wait(); // I made the spinner; you'll see it, dang it!
 		if (pokemon.scene) {
 			toggleSceneSpinner();
 			scene.add(pokemon.scene);

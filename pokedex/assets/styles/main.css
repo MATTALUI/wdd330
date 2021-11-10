@@ -46,8 +46,11 @@ button {
 
 .content {
   background: white;
-  border-radius: 1rem;
-  border: 2px solid yellow;
+  border-radius: .25rem;
+  border: .1rem solid yellow;
+  padding: 1rem;
+  max-height: 30vh;
+  overflow: auto;
 }
 
 .tooltip {
@@ -100,6 +103,14 @@ button {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.poke-search-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 0.25rem 0;
 }
 
 header a {

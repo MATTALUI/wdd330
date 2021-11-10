@@ -12,6 +12,7 @@
 		<script src="./assets/js/three/scene.js" defer></script>
 
 		<script src="./assets/js/initialize.js" defer></script>
+		<script src="./assets/js/models.js" defer></script>
 		<script src="./assets/js/ui.js" defer></script>
 		<link rel="icon" type="image/png" href="./assets/images/pokeball.png">
 	</head>
@@ -67,4 +68,13 @@
 			</div>
 		</main>
 	</body>
+	<template id="poke-search-item-template">
+		<div class="poke-search-result">
+			<span>
+				<span class="result-num">#1</span>
+				<span class="result-name">Name</span>
+			</span>
+			<button class="result-view-button">View Stats</button>
+		</div>
+	</template>
 </html>

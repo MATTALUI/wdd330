@@ -1,6 +1,9 @@
-
-
 (() => {
+  POKEDEX.wait = (ms=500) => new Promise((res, rej) => {
+		setTimeout(() => { // Simulate slow for the spinner
+			res();
+		}, ms);
+	});
 
   (async () => {
     const data = await fetch('./pokemon.json');
