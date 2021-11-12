@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>WDD330 | Pokedex</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<link rel="stylesheet" href="./assets/styles/main.css">
 		<script src="./assets/js/globals.js" defer></script>
 
@@ -15,6 +17,7 @@
 		<script src="./assets/js/models.js" defer></script>
 		<script src="./assets/js/ui.js" defer></script>
 		<link rel="icon" type="image/png" href="./assets/images/pokeball.png">
+
 	</head>
 	<body>
 		<header>
@@ -26,7 +29,7 @@
 				<div class="led yellow"></div>
 				<div class="led green"></div>
 			</spec>
-			<a href="..">Back to Table of Contents</a>	
+			<a href="..">Back to Table of Contents</a>
 		</header>
 		<main>
 			<div id="right">
@@ -35,6 +38,39 @@
 						<img src="./assets/images/pokeball.png" alt="loading">
 					</div>
 					<canvas id="dex-screen"></canvas>
+				</div>
+				<div id="button-container">
+					<div>
+						<div class="dex-button">
+							<i class="fa fa-question-circle"></i>
+						</div>
+						<div class="dex-button">
+
+						</div>
+						<div class="dex-button">
+
+						</div>
+						<div class="dex-button">
+
+						</div>
+						<div class="dex-button">
+
+						</div>
+						<div class="dex-button">
+
+						</div>
+						<div class="dex-button">
+
+						</div>
+						<div class="dex-button">
+
+						</div>
+					</div>
+				</div>
+				<div id="dex-info-screen-container">
+					<div id="dex-info-screen">
+						<div class="dex-info-cta">Please Select A Pokemon...</div>
+					</div>
 				</div>
 			</div>
 			<div id="left">
@@ -62,7 +98,6 @@
 				<div>
 					<h2>My Pokemon Team</h2>
 					<div id="my-team" class="content">
-
 					</div>
 				</div>
 			</div>
@@ -75,6 +110,24 @@
 				<span class="result-name">Name</span>
 			</span>
 			<button class="result-view-button">View Stats</button>
+		</div>
+	</template>
+	<template id="dex-info-screen-template">
+		<div class="dex-info-header">
+			<img class="dex-info-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png" alt="">
+			<div class="dex-info">
+				<div class="dex-info-name">Blastoise</div>
+				<div class="dex-info-height">HT 1'04"</div>
+				<div class="dex-info-weight">WT 13.0lb</div>
+			</div>
+		</div>
+		<div class="dex-info-stats">
+			<div>HP<span class="dex-info-hp">3</span></div>
+			<div>SPEED<span class="dex-info-sp">3</span></div>
+			<div>ATTACK<span class="dex-info-at">3</span></div>
+			<div>DEFENSE<span class="dex-info-def">3</span></div>
+			<div>SP.ATTACK<span class="dex-info-sat">3</span></div>
+			<div>SP.DEFENSE<span class="dex-info-sdef">3</span></div>
 		</div>
 	</template>
 </html>

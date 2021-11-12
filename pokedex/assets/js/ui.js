@@ -3,6 +3,7 @@
   const searchButton = document.querySelector('#search-btn');
   const clearButton = document.querySelector('#clear-btn');
   const searchResultsContainer = document.querySelector('#poke-results');
+  const pokeInfoScreen = document.querySelector('#dex-info-screen');
   const loaderTemplate = `<span>Loading...</span>`;
   let currentViewPokemon = null;
 
@@ -20,6 +21,24 @@
     searchInput.removeEventListener('focus', stopPlaceholderRotation);
   };
 
+  const buildPokemonStatEle = pokemon => {
+    const template = document.querySelector('#dex-info-screen-template');
+    const resultItemEle = template.content.cloneNode(true);
+
+    resultItemEle.querySelector('.dex-info-name').innerHTML = pokemon.name;
+    resultItemEle.querySelector('.dex-info-height').innerHTML = pokemon.displayHeight();
+    resultItemEle.querySelector('.dex-info-weight').innerHTML = pokemon.displayWeight();
+    resultItemEle.querySelector('.dex-info-hp').innerHTML = pokemon.stats.hp;
+    resultItemEle.querySelector('.dex-info-sp').innerHTML = pokemon.stats.speed;
+    resultItemEle.querySelector('.dex-info-at').innerHTML = pokemon.stats.attack;
+    resultItemEle.querySelector('.dex-info-def').innerHTML = pokemon.stats.defense;
+    resultItemEle.querySelector('.dex-info-sat').innerHTML = pokemon.stats.specialAttack;
+    resultItemEle.querySelector('.dex-info-sdef').innerHTML = pokemon.stats.specialDefense;
+    resultItemEle.querySelector('.dex-info-sprite').src = pokemon.sprite;
+
+    return resultItemEle;
+  };
+
   const seePokemonStats = async event => {
     const pokemonNumber = event.target.getAttribute('data-num');
     console.log(pokemonNumber);
@@ -27,7 +46,9 @@
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
     const pokemonData = await res.json();
     currentViewPokemon = Pokemon.fromPokemonAPIData(pokemonData);
-    console.log(currentViewPokemon);
+    const pokemonStatEle = buildPokemonStatEle(currentViewPokemon);
+    pokeInfoScreen.innerHTML = '';
+    pokeInfoScreen.appendChild(pokemonStatEle);
   };
 
   const searchPokemon = async event => {

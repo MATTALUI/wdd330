@@ -11,8 +11,8 @@ function Pokemon({
   this.name = name;
   this.types = types;
   this.sprite = sprite;
-  this.height = height;
-  this.weight = weight;
+  this.height = height; // In decimeters
+  this.weight = weight; // In hectograms
   this.stats = stats || {
     hp: 0,
     attack: 0,
@@ -22,6 +22,23 @@ function Pokemon({
     speed: 0,
   };
 }
+
+Pokemon.prototype.displayHeight = function() {
+  const conversionConstant = 3.93701; // Convert Decimeters to inches
+  const inchesInAFoot = 12;
+  const totalInches = this.height * conversionConstant;
+  const feet = Math.floor(totalInches / inchesInAFoot);
+  const inches = (totalInches % inchesInAFoot).toFixed();
+
+  return `HT ${feet}'${inches}"`;
+};
+
+Pokemon.prototype.displayWeight = function() {
+  const conversionConstant = 0.220462;
+  const lbs = (this.weight * conversionConstant).toFixed(1);
+
+  return `WT ${lbs}lbs`;
+};
 
 Pokemon.fromPokemonAPIData = function(pokemonAPIData) {
   const nameMap = {
