@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WDD 330 | Week 10 Notes</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+  </head>
+
+  <body>
+    <h1>Week 10 Notes</h1>
+    <a href="..">Back to Table of Contents</a>
+    <hr/>
+    <h2>Validating Forms</h2>
+    <p>We want to do validation to make sure that our data is valid:</p>
+    <ul>
+      <li>Right data in the right format</li>
+      <li>Protect Users data</li>
+      <li>Protect ourselves</li>
+    </ul>
+    <p>Two kinds of validation</p>
+    <ul>
+      <li>builtin HTML5</li>
+      <li>Javascript validation</li>
+    </ul>
+    <h3>Builtin</h3>
+    <p>Builtin validation uses html attributes on the inputs</p>
+    <ul>
+      <li>required</li>
+      <li>minlength</li>
+      <li>maxlength</li>
+      <li>type</li>
+      <li>pattern</li>
+    </ul>
+    <p>You can use CSS pseudoclasses to style valid or invalid elements.</p>
+    <h3>Javascript</h3>
+    <p>The constrain api has a lot of builtin info and methods to help with validation</p>
+    <pre>
+    const email = document.getElementById("mail");
+
+    email.addEventListener("input", function (event) {
+      if (email.validity.typeMismatch) {
+        email.setCustomValidity("I am expecting an e-mail address!");
+      } else {
+        email.setCustomValidity("");
+      }
+    });</pre>
+    <p>Old browsers will not support this new API and you'll have to write your own by hand.</p>
+    <h2>Using Fetch</h2>
+    <p>Fetch is the new way to send AJAX/http requests instead of using the old http request builder.</p>
+    <p>You'll need to pass the <code>credentials</code> key into the options in order to make sure that your information is sent in with the request. (Made this mistake before...)</p>
+    <pre>
+    fetch('https://example.com', {
+      credentials: 'include'
+    });</pre>
+    <p>You can actually use the fetch api to upload a file!</p>
+    <pre>
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+      
+    formData.append('username', 'abc123');
+    formData.append('avatar', fileField.files[0]);
+      
+    fetch('https://example.com/profile/avatar', {
+      method: 'PUT',
+      body: formData
+    });</pre>
+    <p>You can add a custom headersclass to the request, but why wouldn't you just pass them in the easy way?</p>
+    <p>You should check availabilty before you use it.</p>
+  </body>
+</html>
