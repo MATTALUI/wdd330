@@ -62,7 +62,6 @@
 <script>
   document.addEventListener('keydown', event => {
     // This is all we need for MVP
-    console.log(event);
     const { keyCode } = event;
     const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
     if (!audio){ return; }
