@@ -4,6 +4,7 @@
   const clearButton = document.querySelector('#clear-btn');
   const searchResultsContainer = document.querySelector('#poke-results');
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
+  const addToTeamButton = document.querySelector('#add-to-team');
   const loaderTemplate = `<span>Loading...</span>`;
   let currentViewPokemon = null;
 
@@ -34,6 +35,7 @@
     resultItemEle.querySelector('.dex-info-def').innerHTML = pokemon.stats.defense;
     resultItemEle.querySelector('.dex-info-sat').innerHTML = pokemon.stats.specialAttack;
     resultItemEle.querySelector('.dex-info-sdef').innerHTML = pokemon.stats.specialDefense;
+    resultItemEle.querySelector('.dex-flavour').innerHTML = pokemon.flavour;
     resultItemEle.querySelector('.dex-info-sprite').src = pokemon.sprite;
 
     return resultItemEle;
@@ -42,6 +44,8 @@
   const seePokemonStats = async event => {
     const pokemonNumber = event.target.getAttribute('data-num');
     POKEDEX.swapPokemon(pokemonNumber);
+
+    // Fetch Pokemon Information
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
     const pokemonData = await res.json();
     const speciesRes = await fetch(pokemonData.species.url);
@@ -50,9 +54,18 @@
       ...pokemonData,
       ...speciesData,
     });
+
+    // Set Pokedex data
     const pokemonStatEle = buildPokemonStatEle(currentViewPokemon);
     pokeInfoScreen.innerHTML = '';
     pokeInfoScreen.appendChild(pokemonStatEle);
+
+    // Enable add to team button
+    addToTeamButton.removeAttribute('disabled');
+    addToTeamButton.classList.add('quickflash');
+    setTimeout(() => {
+      addToTeamButton.classList.remove('quickflash');
+    }, 1000);
   };
 
   const searchPokemon = async event => {
@@ -83,6 +96,11 @@
     }
   };
 
+  const addToTeam = event => {
+    if (!currentViewPokemon) { return; }
+    console.log('Add to team', currentViewPokemon);
+  };
+
 
   const clearSearch = event => {
     searchInput.value = '';
@@ -92,4 +110,5 @@
   searchInput.addEventListener('focus', stopPlaceholderRotation);
   searchButton.addEventListener('click', searchPokemon);
   clearButton.addEventListener('click', clearSearch);
+  addToTeamButton.addEventListener('click', addToTeam);
 })();

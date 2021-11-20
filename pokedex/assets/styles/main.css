@@ -122,6 +122,10 @@ button {
   background-color: #eee;
 }
 
+.dex-flavour {
+  margin: 1rem;
+}
+
 header a {
   color: white;
 }
@@ -189,6 +193,7 @@ header a {
   padding-top: 0;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 #dex-info-screen {
@@ -212,19 +217,30 @@ header a {
   background-color: rgb(52, 107, 181);
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: 2px solid #222;
   border-radius: .25rem;
-  min-height: 1rem;
+  min-height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   color: white;
+  font-size: .8rem;
+  font-family: 'PKMN', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dex-button:hover {
   background-color: lightblue;
-  border-color: yellow;
+  /* border-color: yellow; */
+}
+
+.dex-button[disabled] {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.dex-button.quickflash {
+  animation: quickflash 1s;
 }
 
 .dex-info-stats {
@@ -334,5 +350,19 @@ header a {
 
   100% {
     transform: rotate(-20deg);
+  }
+}
+
+@keyframes quickflash {
+  0% {
+    background-color: gray;
+  }
+
+  50% {
+    background-color: red;
+  }
+
+  100% {
+    background-color: rgb(52, 107, 181);
   }
 }
