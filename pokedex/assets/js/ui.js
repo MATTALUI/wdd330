@@ -1,4 +1,5 @@
 (() => {
+  const maxTeamSize = 6; // This is how many you're allowed in the games
   const searchInput = document.querySelector('input');
   const searchButton = document.querySelector('#search-btn');
   const clearButton = document.querySelector('#clear-btn');
@@ -6,7 +7,9 @@
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
   const addToTeamButton = document.querySelector('#add-to-team');
   const loaderTemplate = `<span>Loading...</span>`;
+
   let currentViewPokemon = null;
+  let myTeam = [];
 
 
   const inputRotation = setInterval(() => {
@@ -61,6 +64,7 @@
     pokeInfoScreen.appendChild(pokemonStatEle);
 
     // Enable add to team button
+    if (myTeam.length >= maxTeamSize) { return; }
     addToTeamButton.removeAttribute('disabled');
     addToTeamButton.classList.add('quickflash');
     setTimeout(() => {
@@ -97,8 +101,12 @@
   };
 
   const addToTeam = event => {
-    if (!currentViewPokemon) { return; }
-    console.log('Add to team', currentViewPokemon);
+    if (!currentViewPokemon || myTeam.length >= maxTeamSize) { return; }
+    myTeam.push(currentViewPokemon);
+    console.log(myTeam);
+    if (myTeam.length >= maxTeamSize) {
+      addToTeamButton.setAttribute('disabled', 'true');
+    }
   };
 
 
