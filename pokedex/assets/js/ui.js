@@ -41,11 +41,15 @@
 
   const seePokemonStats = async event => {
     const pokemonNumber = event.target.getAttribute('data-num');
-    console.log(pokemonNumber);
     POKEDEX.swapPokemon(pokemonNumber);
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
     const pokemonData = await res.json();
-    currentViewPokemon = Pokemon.fromPokemonAPIData(pokemonData);
+    const speciesRes = await fetch(pokemonData.species.url);
+    const speciesData = await speciesRes.json();
+    currentViewPokemon = Pokemon.fromPokemonAPIData({
+      ...pokemonData,
+      ...speciesData,
+    });
     const pokemonStatEle = buildPokemonStatEle(currentViewPokemon);
     pokeInfoScreen.innerHTML = '';
     pokeInfoScreen.appendChild(pokemonStatEle);

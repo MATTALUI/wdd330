@@ -5,6 +5,7 @@ function Pokemon({
   sprite,
   height,
   weight,
+  flavour,
   types=[],
 }={}) {
   this.num = num;
@@ -13,6 +14,7 @@ function Pokemon({
   this.sprite = sprite;
   this.height = height; // In decimeters
   this.weight = weight; // In hectograms
+  this.flavour = flavour;
   this.stats = stats || {
     hp: 0,
     attack: 0,
@@ -52,12 +54,20 @@ Pokemon.fromPokemonAPIData = function(pokemonAPIData) {
     return stats;
   }, {});
   const types = pokemonAPIData.types.map(t => t.type.name);
+  const flavourTextEntry = pokemonAPIData.flavor_text_entries[0] || {};
+  let flavour = flavourTextEntry.flavor_text || '';
+  if (flavour.length) {
+    // The API data is not very well sanitized, so I'll just strip out these
+    // literal unicode characters
+    flavour = flavour.replace(/(\n|\u000c)/gmi, ' ');
+  }
   const pokemon = new Pokemon({
     num: pokemonAPIData.id,
     name: pokemonAPIData.species.name,
     sprite: pokemonAPIData.sprites.front_default,
     height: pokemonAPIData.height,
     weight: pokemonAPIData.weight,
+    flavour,
     stats,
     types,
   });

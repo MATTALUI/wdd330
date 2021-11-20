@@ -19,6 +19,7 @@
     { url: './pokedex/index.html', label: 'Pokedex Project' },
     { url: './week10/notes.html', label: 'Week 10 Notes' },
     { url: './week10/team.html', label: 'Week 10 Team Assignment' },
+    { url: './week11/team.html', label: 'Week 11 Team Assignment' },
   ];
   const contentLinks = linkRegistry.map(link => `<li><a href="${link.url}">${link.label}</a></li>`).join('');
 
