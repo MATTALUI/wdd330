@@ -5,13 +5,18 @@
   const searchButton = document.querySelector('#search-btn');
   const clearButton = document.querySelector('#clear-btn');
   const searchResultsContainer = document.querySelector('#poke-results');
+  const myTeamContainer = document.querySelector('#my-team');
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
   const addToTeamButton = document.querySelector('#add-to-team');
   const wtpButton = document.querySelector('#whos-that-pokemon');
   const loaderTemplate = `<span>Loading...</span>`;
-  const myTeam = JSON.parse(localStorage.getItem(storageTeamKey)) || [];
+  const myTeam = (
+    JSON.parse(localStorage.getItem(storageTeamKey)) || []
+  ).map(p => new Pokemon(p));
   const sfx = {
     wtp: document.querySelector('#sfx-wtp'),
+    ball: document.querySelector('#sfx-ball'),
+    selection: document.querySelector('#sfx-selection'),
   };
   console.log(myTeam);
 
@@ -50,6 +55,17 @@
     return resultItemEle;
   };
 
+  const buildPokemonTeamEle = pokemon => {
+    const template = document.querySelector('#team-member-template');
+    const resultItemEle = template.content.cloneNode(true);
+
+    resultItemEle.querySelector('.team-member__name').innerHTML = pokemon.name;
+    resultItemEle.querySelector('.team-member__sprite').src = pokemon.sprite;
+    resultItemEle.querySelector('.team-member__hp').innerHTML = `${pokemon.stats.hp}/${pokemon.stats.hp}`;
+
+    return resultItemEle;
+  };
+
   const seePokemonStats = async event => {
     const pokemonNumber = event.target.getAttribute('data-num');
     POKEDEX.swapPokemon(pokemonNumber);
@@ -62,6 +78,10 @@
     currentViewPokemon = Pokemon.fromPokemonAPIData({
       ...pokemonData,
       ...speciesData,
+      species: {
+        // This is a little hack to override the name with an already formatted one
+        name: POKEDEX.pokemonHash[pokemonNumber].name,
+      },
     });
 
     // Set Pokedex data
@@ -110,10 +130,20 @@
     localStorage.setItem(storageTeamKey, JSON.stringify(myTeam));
   };
 
+  const renderTeam = () => {
+    myTeamContainer.innerHTML = '';
+    myTeam.forEach(pokemon => {
+      const ele = buildPokemonTeamEle(pokemon);
+      myTeamContainer.appendChild(ele);
+    });
+  };
+
   const addToTeam = event => {
+    sfx.ball.play();
     if (!currentViewPokemon || myTeam.length >= maxTeamSize) { return; }
     myTeam.push(currentViewPokemon);
     saveTeam();
+    renderTeam();
     console.log(myTeam);
     if (myTeam.length >= maxTeamSize) {
       addToTeamButton.setAttribute('disabled', 'true');
@@ -135,4 +165,5 @@
   clearButton.addEventListener('click', clearSearch);
   addToTeamButton.addEventListener('click', addToTeam);
   wtpButton.addEventListener('click', playWTP);
+  renderTeam();
 })();
