@@ -186,6 +186,7 @@
 
   const clearSearch = event => {
     searchInput.value = '';
+    searchResultsContainer.innerHTML = '';
   };
 
   const playWTP = event => {
