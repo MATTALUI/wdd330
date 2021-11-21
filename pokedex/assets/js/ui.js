@@ -4,6 +4,7 @@
   const searchInput = document.querySelector('input');
   const searchButton = document.querySelector('#search-btn');
   const clearButton = document.querySelector('#clear-btn');
+  const releaseButton = document.querySelector('#release');
   const searchResultsContainer = document.querySelector('#poke-results');
   const myTeamContainer = document.querySelector('#my-team');
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
@@ -17,6 +18,7 @@
     wtp: document.querySelector('#sfx-wtp'),
     ball: document.querySelector('#sfx-ball'),
     selection: document.querySelector('#sfx-selection'),
+    pc: document.querySelector('#sfx-pc'),
   };
   console.log(myTeam);
 
@@ -70,19 +72,30 @@
     return resultItemEle;
   };
 
+  const quickFlashButton = buttonEle => {
+    buttonEle.classList.add('quickflash');
+    setTimeout(() => {
+      buttonEle.classList.remove('quickflash');
+    }, 1000);
+  }
+
   const renderCurrentViewPokemon = () => {
     // Set Pokedex data
     const pokemonStatEle = buildPokemonStatEle(currentViewPokemon);
     pokeInfoScreen.innerHTML = '';
     pokeInfoScreen.appendChild(pokemonStatEle);
 
+    if (currentViewPokemonTeamIndex !== null) {
+      releaseButton.removeAttribute('disabled');
+      quickFlashButton(releaseButton);
+    } else {
+      releaseButton.setAttribute('disabled', 'true');
+    }
+
     // Enable add to team button
     if (myTeam.length >= maxTeamSize) { return; }
     addToTeamButton.removeAttribute('disabled');
-    addToTeamButton.classList.add('quickflash');
-    setTimeout(() => {
-      addToTeamButton.classList.remove('quickflash');
-    }, 1000);
+    quickFlashButton(addToTeamButton);
   };
 
   const seeTeamMemberStats = event => {
@@ -179,11 +192,23 @@
     sfx.wtp.play();
   };
 
+  const releaseTeamMember = event => {
+    if (currentViewPokemonTeamIndex == null) { return; }
+    sfx.pc.play();
+    const pokemon = myTeam[currentViewPokemonTeamIndex];
+    myTeam.splice(currentViewPokemonTeamIndex, 1);
+    currentViewPokemonTeamIndex = null;
+    saveTeam();
+    renderTeam();
+    renderCurrentViewPokemon();
+  };
+
 
   searchInput.addEventListener('focus', stopPlaceholderRotation);
   searchButton.addEventListener('click', searchPokemon);
   clearButton.addEventListener('click', clearSearch);
   addToTeamButton.addEventListener('click', addToTeam);
   wtpButton.addEventListener('click', playWTP);
+  releaseButton.addEventListener('click', releaseTeamMember);
   renderTeam();
 })();
