@@ -1,4 +1,5 @@
 (() => {
+  const storageTeamKey = 'POKEDEX::MYTEAM';
   const maxTeamSize = 6; // This is how many you're allowed in the games
   const searchInput = document.querySelector('input');
   const searchButton = document.querySelector('#search-btn');
@@ -7,9 +8,11 @@
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
   const addToTeamButton = document.querySelector('#add-to-team');
   const loaderTemplate = `<span>Loading...</span>`;
+  const myTeam = JSON.parse(localStorage.getItem(storageTeamKey)) || [];
+  console.log(myTeam);
 
   let currentViewPokemon = null;
-  let myTeam = [];
+
 
 
   const inputRotation = setInterval(() => {
@@ -18,7 +21,6 @@
     const randMon = POKEDEX.pokemonHash[randKey];
     searchInput.setAttribute('placeholder', randMon.name);
   }, 5000);
-
 
   const stopPlaceholderRotation = event => {
     clearInterval(inputRotation);
@@ -100,9 +102,14 @@
     }
   };
 
+  const saveTeam = () => {
+    localStorage.setItem(storageTeamKey, JSON.stringify(myTeam));
+  };
+
   const addToTeam = event => {
     if (!currentViewPokemon || myTeam.length >= maxTeamSize) { return; }
     myTeam.push(currentViewPokemon);
+    saveTeam();
     console.log(myTeam);
     if (myTeam.length >= maxTeamSize) {
       addToTeamButton.setAttribute('disabled', 'true');
