@@ -7,8 +7,12 @@
   const searchResultsContainer = document.querySelector('#poke-results');
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
   const addToTeamButton = document.querySelector('#add-to-team');
+  const wtpButton = document.querySelector('#whos-that-pokemon');
   const loaderTemplate = `<span>Loading...</span>`;
   const myTeam = JSON.parse(localStorage.getItem(storageTeamKey)) || [];
+  const sfx = {
+    wtp: document.querySelector('#sfx-wtp'),
+  };
   console.log(myTeam);
 
   let currentViewPokemon = null;
@@ -121,9 +125,14 @@
     searchInput.value = '';
   };
 
+  const playWTP = event => {
+    sfx.wtp.play();
+  };
+
 
   searchInput.addEventListener('focus', stopPlaceholderRotation);
   searchButton.addEventListener('click', searchPokemon);
   clearButton.addEventListener('click', clearSearch);
   addToTeamButton.addEventListener('click', addToTeam);
+  wtpButton.addEventListener('click', playWTP);
 })();
