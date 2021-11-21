@@ -21,6 +21,7 @@
   console.log(myTeam);
 
   let currentViewPokemon = null;
+  let currentViewPokemonTeamIndex = null;
 
 
 
@@ -55,35 +56,21 @@
     return resultItemEle;
   };
 
-  const buildPokemonTeamEle = pokemon => {
+  const buildPokemonTeamEle = (pokemon, index) => {
     const template = document.querySelector('#team-member-template');
     const resultItemEle = template.content.cloneNode(true);
 
     resultItemEle.querySelector('.team-member__name').innerHTML = pokemon.name;
     resultItemEle.querySelector('.team-member__sprite').src = pokemon.sprite;
     resultItemEle.querySelector('.team-member__hp').innerHTML = `${pokemon.stats.hp}/${pokemon.stats.hp}`;
+    resultItemEle.querySelector('.team-member').setAttribute('data-index', index);
+    resultItemEle.querySelector('.team-member').setAttribute('data-num', pokemon.num);
+    resultItemEle.querySelector('.team-member').addEventListener('click', seeTeamMemberStats);
 
     return resultItemEle;
   };
 
-  const seePokemonStats = async event => {
-    const pokemonNumber = event.target.getAttribute('data-num');
-    POKEDEX.swapPokemon(pokemonNumber);
-
-    // Fetch Pokemon Information
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
-    const pokemonData = await res.json();
-    const speciesRes = await fetch(pokemonData.species.url);
-    const speciesData = await speciesRes.json();
-    currentViewPokemon = Pokemon.fromPokemonAPIData({
-      ...pokemonData,
-      ...speciesData,
-      species: {
-        // This is a little hack to override the name with an already formatted one
-        name: POKEDEX.pokemonHash[pokemonNumber].name,
-      },
-    });
-
+  const renderCurrentViewPokemon = () => {
     // Set Pokedex data
     const pokemonStatEle = buildPokemonStatEle(currentViewPokemon);
     pokeInfoScreen.innerHTML = '';
@@ -96,6 +83,39 @@
     setTimeout(() => {
       addToTeamButton.classList.remove('quickflash');
     }, 1000);
+  };
+
+  const seeTeamMemberStats = event => {
+    const index = +event.target.closest('.team-member').getAttribute('data-index');
+    const pokemon = myTeam[index];
+
+    currentViewPokemonTeamIndex = index;
+    currentViewPokemon = pokemon;
+
+    POKEDEX.swapPokemon(pokemon.num);
+    renderCurrentViewPokemon(true);
+  };
+
+  const seePokemonStats = async event => {
+    const pokemonNumber = event.target.getAttribute('data-num');
+    POKEDEX.swapPokemon(pokemonNumber);
+
+    // Fetch Pokemon Information
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
+    const pokemonData = await res.json();
+    const speciesRes = await fetch(pokemonData.species.url);
+    const speciesData = await speciesRes.json();
+    currentViewPokemonTeamIndex = null;
+    currentViewPokemon = Pokemon.fromPokemonAPIData({
+      ...pokemonData,
+      ...speciesData,
+      species: {
+        // This is a little hack to override the name with an already formatted one
+        name: POKEDEX.pokemonHash[pokemonNumber].name,
+      },
+    });
+
+    renderCurrentViewPokemon();
   };
 
   const searchPokemon = async event => {
@@ -132,8 +152,8 @@
 
   const renderTeam = () => {
     myTeamContainer.innerHTML = '';
-    myTeam.forEach(pokemon => {
-      const ele = buildPokemonTeamEle(pokemon);
+    myTeam.forEach((pokemon, index) => {
+      const ele = buildPokemonTeamEle(pokemon, index);
       myTeamContainer.appendChild(ele);
     });
   };
