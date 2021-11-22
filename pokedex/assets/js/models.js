@@ -42,6 +42,10 @@ Pokemon.prototype.displayWeight = function() {
   return `WT ${lbs}lbs`;
 };
 
+Pokemon.prototype.toHearString = function () {
+  return `${this.name}. ${this.flavour}`;
+};
+
 Pokemon.fromPokemonAPIData = function(pokemonAPIData) {
   const nameMap = {
     ['special-defense']: "specialDefense",

@@ -5,6 +5,7 @@
   const searchButton = document.querySelector('#search-btn');
   const clearButton = document.querySelector('#clear-btn');
   const releaseButton = document.querySelector('#release');
+  const hearButton = document.querySelector('#hear');
   const searchResultsContainer = document.querySelector('#poke-results');
   const myTeamContainer = document.querySelector('#my-team');
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
@@ -204,6 +205,15 @@
     renderCurrentViewPokemon();
   };
 
+  const hearPokemonDescription = event => {
+    if (!currentViewPokemon) { return; }
+    const msg = new SpeechSynthesisUtterance();
+    const voices = window.speechSynthesis.getVoices();
+    msg.voice = voices.find(v => v.name === 'Alex') || voices[0];
+    msg.text = currentViewPokemon.toHearString();
+    speechSynthesis.speak(msg);
+  };
+
 
   searchInput.addEventListener('focus', stopPlaceholderRotation);
   searchButton.addEventListener('click', searchPokemon);
@@ -211,5 +221,6 @@
   addToTeamButton.addEventListener('click', addToTeam);
   wtpButton.addEventListener('click', playWTP);
   releaseButton.addEventListener('click', releaseTeamMember);
+  hearButton.addEventListener('click', hearPokemonDescription);
   renderTeam();
 })();
