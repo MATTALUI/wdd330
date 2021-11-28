@@ -21,6 +21,15 @@
 		document.querySelector('#loader-container').classList.toggle('hidden');
 	}
 
+	POKEDEX.flickerWTPLights = () => {
+		scene.remove(hlight);
+		scene.remove(dLight);
+		setTimeout(() => {
+			scene.add(hlight);
+			scene.add(dLight);
+		}, 6000);
+	};
+
 	POKEDEX.swapPokemon = async num => {
 		const pokemon = POKEDEX.pokemonHash[num];
 		if (currentScenePokemon) {

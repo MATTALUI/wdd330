@@ -191,7 +191,9 @@
   };
 
   const playWTP = event => {
+    if (!currentViewPokemon) { return; }
     sfx.wtp.play();
+    POKEDEX.flickerWTPLights();
   };
 
   const releaseTeamMember = event => {
