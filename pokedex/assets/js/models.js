@@ -58,7 +58,10 @@ Pokemon.fromPokemonAPIData = function(pokemonAPIData) {
     return stats;
   }, {});
   const types = pokemonAPIData.types.map(t => t.type.name);
-  const flavourTextEntry = pokemonAPIData.flavor_text_entries[0] || {};
+  const flavourTextEntry =
+    pokemonAPIData.flavor_text_entries.find(flavour => flavour.language.name === 'en') ||
+    pokemonAPIData.flavor_text_entries[0] ||
+    {};
   let flavour = flavourTextEntry.flavor_text || '';
   if (flavour.length) {
     // The API data is not very well sanitized, so I'll just strip out these
