@@ -216,7 +216,16 @@
     speechSynthesis.speak(msg);
   };
 
+  const makeLink = (event) => {
+    window.open(
+      event.target.getAttribute('href'),
+      event.target.getAttribute('target')
+    );
+  };
 
+
+  document.querySelectorAll('.pseudolink')
+    .forEach(ele => ele.addEventListener('click', makeLink));
   searchInput.addEventListener('focus', stopPlaceholderRotation);
   searchButton.addEventListener('click', searchPokemon);
   clearButton.addEventListener('click', clearSearch);

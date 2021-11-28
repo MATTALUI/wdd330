@@ -248,6 +248,8 @@ header a {
   color: white;
   font-size: .8rem;
   font-family: 'PKMN', Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  padding: 0;
 }
 
 .dex-button:hover {
