@@ -11,7 +11,7 @@
   const pokeInfoScreen = document.querySelector('#dex-info-screen');
   const addToTeamButton = document.querySelector('#add-to-team');
   const wtpButton = document.querySelector('#whos-that-pokemon');
-  const loaderTemplate = `<span>Loading...</span>`;
+  const loaderTemplate = `<span class="loader">Loading...</span>`;
   const myTeam = (
     JSON.parse(localStorage.getItem(storageTeamKey)) || []
   ).map(p => new Pokemon(p));
